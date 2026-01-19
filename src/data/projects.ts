@@ -1,7 +1,7 @@
 import photomentorImage from "./photomentor.png";
 import safelinkImage from "./safelink.png";
 import fakeJobImage from "./fakejobdetecor.png";
-import unhChatbotImage from "./UNH chatbot.png";
+import unhChatbotImage from "./unh-chatbot.png";
 
 export const projects = [
   {
