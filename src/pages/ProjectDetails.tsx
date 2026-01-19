@@ -24,6 +24,17 @@ const isImplementationStep = (value: unknown): value is ImplementationStep => {
 const ProjectDetails = () => {
   const { hash } = useLocation();
 
+  const projectOrder = [
+    "fake-job-detector",
+    "unh-graduate-catalog-chatbot",
+    "photomentor-ai",
+    "safelink-ai",
+  ];
+
+  const orderedProjects = [...projects].sort(
+    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
+  );
+
   useEffect(() => {
     if (hash) {
       setTimeout(() => {
@@ -48,7 +59,7 @@ const ProjectDetails = () => {
           </div>
         </Reveal>
 
-        {projects.map((project) => (
+        {orderedProjects.map((project) => (
           <Reveal key={project.id}>
             <section id={project.id} className="py-24 border-b border-white/5 last:border-0 scroll-mt-24">
               <div className="grid lg:grid-cols-2 gap-14 items-start">
@@ -158,7 +169,7 @@ const ProjectDetails = () => {
                     </div>
                   ) : (
                     <ul className="space-y-5">
-                      {(project.implementation as string[]).map((step, i) => (
+                      {(project.implementation as unknown as string[]).map((step, i) => (
                         <li key={i} className="flex gap-4 text-slate-300">
                           <CheckCircle2 className="text-emerald-400 shrink-0 mt-1" size={20} />
                           <span className="text-sm md:text-base leading-relaxed">{step}</span>

@@ -7,6 +7,17 @@ import { Reveal, Stagger, StaggerItem } from "./Motion";
 const Projects = () => {
   const navigate = useNavigate();
 
+  const projectOrder = [
+    "fake-job-detector",
+    "unh-graduate-catalog-chatbot",
+    "photomentor-ai",
+    "safelink-ai",
+  ];
+
+  const orderedProjects = [...projects].sort(
+    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
+  );
+
   return (
     <section id="projects" className="py-24 bg-black">
       <div className="container mx-auto px-6">
@@ -22,7 +33,7 @@ const Projects = () => {
 
           <div className="relative">
             <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project, index) => (
+              {orderedProjects.map((project, index) => (
                 <StaggerItem
                   key={project.id}
                   className={`group cursor-pointer rounded-2xl border border-white/10 bg-[#121826] p-5 md:p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60`}

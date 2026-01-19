@@ -1,6 +1,7 @@
 import photomentorImage from "./photomentor.png";
 import safelinkImage from "./safelink.png";
 import fakeJobImage from "./fakejobdetecor.png";
+import unhChatbotImage from "./UNH chatbot.png";
 
 export const projects = [
   {
@@ -248,6 +249,61 @@ export const projects = [
           "Deployed backend on Render.",
           "Deployed frontend on Vercel.",
           "Verified end-to-end inference in production.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "unh-graduate-catalog-chatbot",
+    title: "ASK UNH: Graduate Catalog Chatbot",
+    subtitle: "AI Internship Project • Aug – Dec 2025",
+    description:
+      "An AI-powered information retrieval chatbot for the UNH Graduate Catalog, designed to improve answer relevance through structured chunking and ranking-based retrieval boosts.",
+    highlights: [
+      "Worked in a 4-member Agile team using GitHub, feature branches, and code reviews",
+      "Processed UNH Graduate Catalog into structured chunks using contextual headers",
+      "Enhanced retrieval quality using tier ranking and program-based boosts",
+      "Achieved ~95% accuracy using BERTScore, SBERT similarity, and recall@k",
+      "Integrated evaluation dashboards to visualize results and track progress",
+    ],
+    tech: ["Python", "RAG", "NLP", "SBERT", "BERTScore", "Recall@K", "GitHub", "Agile"],
+    image: unhChatbotImage,
+    githubUrl: "https://github.com/raju8309/UNH-chatbot",
+    demoUrl: "",
+    implementation: [
+      {
+        title: "Step 1: Catalog Ingestion & Chunking",
+        bullets: [
+          "Converted catalog content into structured chunks using contextual headers.",
+          "Standardized chunk metadata to support ranking and filtering.",
+        ],
+      },
+      {
+        title: "Step 2: Retrieval Ranking",
+        bullets: [
+          "Implemented tier-based ranking and program-based boosts to improve relevance.",
+          "Iterated on ranking logic based on evaluation feedback.",
+        ],
+      },
+      {
+        title: "Step 3: Evaluation",
+        bullets: [
+          "Measured retrieval/answer quality with BERTScore, SBERT similarity, and recall@k.",
+          "Tracked progress and regressions with consistent evaluation runs.",
+        ],
+      },
+      {
+        title: "Step 4: Dashboarding",
+        bullets: [
+          "Built evaluation dashboards to visualize metrics and compare iterations.",
+          "Shared results with the team to align on improvements.",
+        ],
+      },
+      {
+        title: "Step 5: Team Workflow",
+        bullets: [
+          "Delivered features through GitHub branching strategy and code reviews.",
+          "Collaborated in an Agile process with consistent iteration cycles.",
         ],
       },
     ],
