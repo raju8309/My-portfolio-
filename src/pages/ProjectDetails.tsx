@@ -131,8 +131,8 @@ const ProjectDetails = () => {
                 </Reveal>
               </div>
 
-              <Stagger className="mt-14 grid lg:grid-cols-2 gap-10 items-start">
-                <StaggerItem className="bg-[#1a1f2e] p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl">
+              <Stagger className="mt-8 md:mt-14 grid lg:grid-cols-2 gap-8 md:gap-10 items-start">
+                <StaggerItem className="bg-[#1a1f2e] p-6 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl">
                   <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
                     <Layers className="text-emerald-400" size={24} /> Key Highlights
                   </h3>
@@ -146,7 +146,7 @@ const ProjectDetails = () => {
                   </ul>
                 </StaggerItem>
 
-                <StaggerItem className="bg-[#1a1f2e] p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl">
+                <StaggerItem className="bg-[#1a1f2e] p-6 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl">
                   <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
                     <Cpu className="text-emerald-400" size={24} /> Detailed Implementation
                   </h3>
