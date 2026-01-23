@@ -61,7 +61,7 @@ const ProjectDetails = () => {
 
         {orderedProjects.map((project) => (
           <Reveal key={project.id}>
-            <section id={project.id} className="py-24 border-b border-white/5 last:border-0 scroll-mt-24">
+            <section id={project.id} className="py-12 md:py-24 border-b border-white/5 last:border-0 scroll-mt-24">
               <div className="grid lg:grid-cols-2 gap-14 items-start">
                 <div>
                   <h2 className="text-4xl font-bold mb-2 font-heading">{project.title}</h2>
