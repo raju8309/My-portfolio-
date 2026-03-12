@@ -36,10 +36,12 @@ export const Reveal = ({
   className,
   delay = 0,
   once = true,
+  disableInView = false,
 }: PropsWithChildren<
   ClassNameProps & {
     delay?: number;
     once?: boolean;
+    disableInView?: boolean;
   }
 >) => {
   return (
@@ -47,8 +49,9 @@ export const Reveal = ({
       className={className}
       variants={revealVariants}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once, amount: 0.2 }}
+      {...(disableInView
+        ? { animate: "show" }
+        : { whileInView: "show", viewport: { once, amount: 0.2 } })}
       transition={{ duration: 0.55, ease: "easeOut", delay }}
     >
       {children}

@@ -133,7 +133,7 @@ const Projects = () => {
                             navigate(`/project-details#${project.id}`);
                           }}
                         >
-                          View Details
+                          View Complete Project Case Study
                           <ExternalLink />
                         </Button>
                       </div>
