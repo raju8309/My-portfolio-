@@ -5,6 +5,16 @@ import { projects } from "../data/projects";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Motion";
 
+const img1 = new URL("../data/1 .png", import.meta.url).href;
+const img2 = new URL("../data/2.png", import.meta.url).href;
+const img3 = new URL("../data/3.png", import.meta.url).href;
+const img4 = new URL("../data/4.png", import.meta.url).href;
+const img5 = new URL("../data/5.png", import.meta.url).href;
+const img6 = new URL("../data/6.png", import.meta.url).href;
+const gemProblem = new URL("../data/Gemini_Generated_Image_hgi3wohgi3wohgi3.png", import.meta.url).href;
+const gemApproach = new URL("../data/Gemini_Generated_Image_qcozqcqcozqcqcoz.png", import.meta.url).href;
+const gemResults = new URL("../data/Gemini_Generated_Image_70qp4070qp4070qp.png", import.meta.url).href;
+
 const FakeJobCaseStudy = () => {
   return (
     <div className="space-y-10 text-slate-200">
@@ -247,22 +257,22 @@ const FakeJobCaseStudy = () => {
                 </div>
                 {section.title === "The Problem" && (
                   <div className="hidden md:flex items-center justify-center">
-                    <img src="/src/data/1 .png" alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                    <img src={img1} alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                   </div>
                 )}
                 {section.title === "My Approach" && (
                   <div className="hidden md:flex items-center justify-center">
-                    <img src="/src/data/2.png" alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                    <img src={img2} alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                   </div>
                 )}
                 {section.title === "Results & Impact" && (
                   <div className="hidden md:flex items-center justify-center">
-                    <img src="/src/data/3.png" alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                    <img src={img3} alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                   </div>
                 )}
                 {section.title === "Technologies & Tools" && (
                   <div className="hidden md:flex items-center justify-center">
-                    <img src="/src/data/5.png" alt="Technology Stack" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                    <img src={img5} alt="Technology Stack" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                   </div>
                 )}
               </div>
@@ -447,17 +457,17 @@ const UNHCaseStudy = () => {
               </div>
               {section.title === "The Problem" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/1 .png" alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img1} alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "My Approach" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/2.png" alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img2} alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "Results & Impact" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/3.png" alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img3} alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
             </div>
@@ -646,17 +656,17 @@ const PhotoMentorCaseStudy = () => {
               </div>
               {section.title === "The Problem" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/4.png" alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img4} alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "My Approach" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/5.png" alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img5} alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "Results & Impact" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/6.png" alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={img6} alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
             </div>
@@ -845,17 +855,17 @@ const SafeLinkCaseStudy = () => {
               </div>
               {section.title === "The Problem" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/Gemini_Generated_Image_hgi3wohgi3wohgi3.png" alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={gemProblem} alt="Problem" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "My Approach" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/Gemini_Generated_Image_qcozqcqcozqcqcoz.png" alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={gemApproach} alt="Approach" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
               {section.title === "Results & Impact" && (
                 <div className="hidden md:flex items-center justify-center">
-                  <img src="/src/data/Gemini_Generated_Image_70qp4070qp4070qp.png" alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
+                  <img src={gemResults} alt="Results" className="rounded-xl border border-white/10 max-w-md w-full object-cover" />
                 </div>
               )}
             </div>
