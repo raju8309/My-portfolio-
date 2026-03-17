@@ -11,7 +11,7 @@ const skillCategories = [
   },
   {
     title: "AI/ML Tools",
-    skills: ["NLP", "TF-IDF", "Logistic Regression", "BERT", "SBERT", "LLMs", "RAG", "Hugging Face", "PyTorch", "Deep Learning", "Computer Vision", "FER+"],
+    skills: ["NLP", "TF-IDF", "Logistic Regression", "BERT", "SBERT", "LLMs", "RAG", "Hugging Face", "PyTorch", "Deep Learning", "Computer Vision", "FER+", "AWS", "GCP"],
   },
   {
     title: "Developer Tools",
