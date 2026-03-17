@@ -26,9 +26,16 @@ const Experience = () => {
 
           <Reveal className="mb-16" delay={0.1}>
             <div>
-              <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-3">
-                Co-Founder & FullStack & AI Engineer
-              </h3>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 mb-3">
+                <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black">
+                  Co-Founder & FullStack & AI Engineer
+                </h3>
+                <div className="sm:flex-shrink-0">
+                  <span className="inline-flex items-center px-4 py-1.5 bg-white border border-gray-200 rounded-full text-base sm:text-lg font-medium text-gray-700">
+                    currently building...
+                  </span>
+                </div>
+              </div>
               <p className="text-lg lg:text-xl text-gray-700 font-medium mb-4">
                 PaySplit AI — Fintech Startup
               </p>
@@ -102,6 +109,12 @@ const Experience = () => {
                   split one checkout across multiple cards using AI-powered
                   allocation and fraud detection.
                 </p>
+
+                <div className="mb-6">
+                  <span className="inline-flex items-center px-4 py-1.5 bg-gray-100 border border-gray-200 rounded-full text-sm font-medium text-gray-700">
+                    More features coming soon...
+                  </span>
+                </div>
               </div>
 
               <button
