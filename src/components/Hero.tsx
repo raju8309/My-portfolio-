@@ -11,18 +11,18 @@ const Hero = () => {
           {/* Left Content */}
           <Reveal className="space-y-6">
             <div>
-              <p className="text-muted-foreground text-lg font-medium mb-2">Hello,</p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading">
+              <p className="text-gray-300 text-lg font-medium mb-2">Hello,</p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white">
                 Raju here! <span className="animate-wave">👋</span>
               </h1>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              I'm a <span className="text-foreground font-medium">AI Engineer</span> with <span className="text-foreground font-medium">2+ years of experience</span>, built through an internship and multiple end-to-end projects.
-              I work across <span className="text-foreground font-medium">LLMs / GenAI</span>, <span className="text-foreground font-medium">RAG</span>, <span className="text-foreground font-medium">embeddings</span>, <span className="text-foreground font-medium">fine-tuning</span>, <span className="text-foreground font-medium">classical ML</span>, <span className="text-foreground font-medium">NLP</span>, <span className="text-foreground font-medium">Deep Learning</span>, <span className="text-foreground font-medium">Computer Vision</span>, and <span className="text-foreground font-medium">MLOps</span>—from experimentation to deployment and monitoring.
+            <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of experience</span>, built through an internship and multiple end-to-end projects.
+              I work across <span className="text-white font-medium">LLMs / GenAI</span>, <span className="text-white font-medium">RAG</span>, <span className="text-white font-medium">embeddings</span>, <span className="text-white font-medium">fine-tuning</span>, <span className="text-white font-medium">classical ML</span>, <span className="text-white font-medium">NLP</span>, <span className="text-white font-medium">Deep Learning</span>, <span className="text-white font-medium">Computer Vision</span>, and <span className="text-white font-medium">MLOps</span>—from experimentation to deployment and monitoring.
             </p>
 
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               I completed my Master's in IT at the University of New Hampshire and I'm focused on building production-ready systems.
             </p>
 
@@ -32,7 +32,7 @@ const Hero = () => {
                 href="https://github.com/raju8309"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-secondary rounded-lg"
+                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
               >
                 <Github size={22} />
               </a>
@@ -40,7 +40,7 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/raju-kotturi-609674304/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-secondary rounded-lg"
+                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
               >
                 <Linkedin size={22} />
               </a>
@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Right Content - Profile Image */}
           <Reveal className="relative flex justify-center lg:justify-end" delay={0.12}>
             <div className="relative w-full max-w-[520px]">
-              <div className="relative h-[460px] md:h-[560px] w-full">
+              <div className="relative h-[460px] md:h-[560px] w-full bg-black rounded-2xl overflow-hidden">
                 <img
                   src={profileImage}
                   alt="Raju Kotturi profile"

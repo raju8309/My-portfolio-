@@ -61,6 +61,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Beautiful light colors
+        "sage-green": "#F0F4F0",
+        "soft-blue": "#E6F2FF", 
+        "warm-peach": "#FFE8D6",
+        "lavender": "#F3E5F5",
+        "mint": "#E8F5E8",
+        "cream": "#FFF8E7",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -9,140 +9,116 @@ const Projects = () => {
 
   const projectOrder = [
     "fake-job-detector",
-    "unh-graduate-catalog-chatbot",
     "photomentor-ai",
     "safelink-ai",
   ];
 
-  const orderedProjects = [...projects].sort(
-    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
-  );
+  const orderedProjects = projectOrder
+    .map(id => projects.find(p => p.id === id))
+    .filter(Boolean);
 
   return (
-    <section id="projects" className="py-24 bg-black">
+    <section id="projects" className="py-24 bg-gray-100 bg-dotted">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-6xl">
-          <Reveal className="mb-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-2">
-              Featured <span className="text-gradient">Projects</span>
-            </h2>
-            <p className="text-muted-foreground text-sm md:text-base">
-              AI-powered solutions built with cutting-edge technologies
-            </p>
-          </Reveal>
+        <Reveal className="mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold font-heading mb-4 text-black">
+            Projects
+          </h2>
+        </Reveal>
 
-          <div className="relative">
-            <Stagger className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {orderedProjects.map((project, index) => (
-                <StaggerItem
-                  key={project.id}
-                  className={`group cursor-pointer rounded-2xl border border-white/10 bg-[#121826] p-5 md:p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60`}
+        <div>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+            {orderedProjects.map((project, index) => (
+              <StaggerItem
+                key={project.id}
+              >
+                <div 
+                  className="bg-gray-50 border border-gray-300 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer group"
+                  onClick={() => navigate(`/project-details#${project.id}`)}
                 >
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(`/project-details#${project.id}`)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") navigate(`/project-details#${project.id}`);
-                    }}
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <div className="text-xs font-semibold tracking-wide text-primary/80">
-                          Project #{String(index + 1).padStart(2, "0")}
-                        </div>
-                        <h3 className="mt-1 text-lg md:text-xl font-heading font-bold transition-colors duration-300 group-hover:text-primary">
-                          {project.title}
-                        </h3>
-                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                          {project.subtitle}
-                        </p>
-                      </div>
+                  {/* Project Image */}
+                  <div className="h-48 w-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                      }}
+                    />
+                  </div>
 
-                      <div className="flex items-center gap-2">
-                        {project.githubUrl ? (
-                          <Button
-                            asChild
-                            variant="outline"
-                            size="icon"
-                            aria-label="GitHub"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                              <Github />
-                            </a>
-                          </Button>
-                        ) : (
-                          <Button variant="outline" size="icon" aria-label="GitHub" disabled onClick={(e) => e.stopPropagation()}>
-                            <Github />
-                          </Button>
-                        )}
-                        {project.demoUrl ? (
-                          <Button
-                            asChild
-                            variant="outline"
-                            size="icon"
-                            aria-label="Live demo"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                              <ExternalLink />
-                            </a>
-                          </Button>
-                        ) : (
-                          <Button variant="outline" size="icon" aria-label="Live demo" disabled onClick={(e) => e.stopPropagation()}>
-                            <ExternalLink />
-                          </Button>
-                        )}
-                      </div>
-                    </div>
+                  {/* Project Content */}
+                  <div className="p-6 lg:p-8">
+                    <h3 className="text-xl lg:text-2xl font-bold font-heading mb-4 text-black">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-gray-700 text-base lg:text-lg mb-6 leading-relaxed line-clamp-3">
+                      {project.subtitle}
+                    </p>
 
-                    <div className="mt-4 aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/20">
-                      <img
-                        src={project.image}
-                        alt={`${project.title} screenshot`}
-                        className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                        loading="lazy"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                        }}
-                      />
-                    </div>
-
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.tech.slice(0, 5).map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-200 transition-colors duration-300 group-hover:border-primary/30"
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tech.slice(0, 3).map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="px-3 py-2 bg-gray-200 text-gray-800 text-sm font-medium rounded-full"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-5 flex items-center justify-between gap-3">
-                      <div className="text-xs text-muted-foreground">Click card for details</div>
-
-                      <div className="flex items-center gap-2">
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-3">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="rounded-full border-gray-400 text-gray-800 hover:bg-gray-100 hover:border-gray-500 transition-colors text-sm px-4 py-2"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(`/project-details#${project.id}`);
+                        }}
+                      >
+                        View Details
+                        <ExternalLink size={14} className="ml-2" />
+                      </Button>
+                      
+                      {project.demoUrl && (
                         <Button
-                          variant="hero"
+                          variant="outline"
                           size="sm"
-                          className="transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            navigate(`/project-details#${project.id}`);
-                          }}
+                          className="rounded-full border-blue-500 text-blue-600 hover:bg-blue-50 hover:border-blue-600 transition-colors text-sm px-4 py-2"
+                          asChild
+                          onClick={(e) => e.stopPropagation()}
                         >
-                          View Complete Project Case Study
-                          <ExternalLink />
+                          <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                            <ExternalLink size={14} className="mr-2" />
+                            Demo
+                          </a>
                         </Button>
-                      </div>
+                      )}
+                      
+                      {project.githubUrl && (
+                        <a 
+                          href={project.githubUrl} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-600 bg-transparent hover:bg-gray-900 text-black hover:text-white font-bold transition-all duration-200 text-sm px-4 py-2"
+                        >
+                          <Github size={14} className="text-black group-hover:text-white" />
+                          Code
+                        </a>
+                      )}
                     </div>
                   </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </div>
     </section>

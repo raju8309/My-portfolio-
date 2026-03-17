@@ -25,13 +25,13 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-secondary/30">
+    <section id="skills" className="py-24 bg-gray-100">
       <div className="container mx-auto px-6">
         <Reveal className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
-            Technical <span className="text-gradient">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-black">
+            Technical <span className="text-black">Skills</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             Technologies and tools I work with
           </p>
         </Reveal>
@@ -40,16 +40,16 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <StaggerItem
               key={category.title}
-              className="bg-card-gradient rounded-2xl border border-border p-6 hover-lift"
+              className="bg-white border border-gray-200 rounded-2xl p-6 hover-lift shadow-sm"
             >
-              <h3 className="text-lg font-heading font-semibold mb-4 text-primary">
+              <h3 className="text-lg font-heading font-semibold mb-4 text-black">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium hover:bg-primary/20 hover:text-foreground transition-colors"
+                    className="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
                   >
                     {skill}
                   </span>

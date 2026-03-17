@@ -2,6 +2,7 @@ import photomentorImage from "./photomentor.png";
 import safelinkImage from "./safelink.png";
 import fakeJobImage from "./fakejobdetecor.png";
 import unhChatbotImage from "./unh-chatbot.png";
+import paysplitImage from "./paysplit.png";
 
 export const projects = [
   {
@@ -193,8 +194,7 @@ export const projects = [
     highlights: [
       "Built an AI-powered fake job detection system with NLP/ML classification, probability-based risk scoring, and SHAP model explainability for transparent fraud detection",
       "Implemented multi-agent verification (web search investigator, email/domain auditor) and RAG memory bank with TF-IDF similarity search to identify fraud patterns from historical data",
-      "Developed production-ready FastAPI backend with MLflow experiment tracking, Docker containerization, async pipelines, and memory-optimized deployment (512Mi) using lazy loading and chunked processing",
-      "Integrated external APIs (Adzuna verification), built scalable REST endpoints with comprehensive error handling, and deployed full-stack application (Next.js frontend) on Render and Vercel",
+      "Developed production-ready FastAPI backend with MLflow experiment tracking, Docker containerization, async pipelines, and memory-optimized deployment (512Mi) using lazy loading and chunked processing"
     ],
     tech: ["Python", "NLP", "TF-IDF", "Logistic Regression", "RAG", "MLflow", "SHAP", "FastAPI", "Docker", "Next.js", "Render", "Vercel"],
     image: fakeJobImage,
@@ -304,6 +304,81 @@ export const projects = [
         bullets: [
           "Delivered features through GitHub branching strategy and code reviews.",
           "Collaborated in an Agile process with consistent iteration cycles.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "paysplit-ai",
+    title: "PaySplit AI — Multi-Card Payment Splitting",
+    subtitle: "Fintech Web Application & Chrome Extension • AI-Powered Payment Optimization",
+    description:
+      "A fintech web application and Chrome extension that uses AI to automatically split a single online payment across multiple credit cards, maximizing cashback rewards and preventing declined transactions — built by a 3-person founding team while completing graduate school.",
+    highlights: [
+      "Built AI recommendation engine analyzing card balance, rewards rate, and merchant category for optimal split allocation",
+      "Integrated XGBoost fraud detection with sub-50ms inference using FastAPI app.state optimization",
+      "Developed Chrome Extension with MutationObserver for SPA-aware checkout detection across 500+ sites",
+      "Achieved 95%+ fraud detection accuracy and deployed full Stripe payment flow with real-time monitoring"
+    ],
+    tech: ["React", "FastAPI", "XGBoost", "PyTorch", "Chrome Extension", "DynamoDB", "Stripe", "AWS", "Docker", "CI/CD"],
+    image: paysplitImage,
+    githubUrl: "https://github.com/raju8309/PaySplit.AI-startup",
+    demoUrl: "",
+    implementation: [
+      {
+        title: "Step 1: Architecture Design",
+        bullets: [
+          "Designed full-stack fintech architecture with AI recommendation engine",
+          "Planned multi-card allocation system with fraud detection integration",
+        ],
+      },
+      {
+        title: "Step 2: AI Recommendation Engine",
+        bullets: [
+          "Built SVD-based card allocation engine optimizing limit, balance, and category multipliers",
+          "Implemented real-time analysis of connected cards for optimal split recommendations",
+        ],
+      },
+      {
+        title: "Step 3: Fraud Detection Integration",
+        bullets: [
+          "Embedded XGBoost + PyTorch fraud model in FastAPI app.state for sub-50ms inference",
+          "Achieved 95%+ fraud detection accuracy on held-out transaction data",
+        ],
+      },
+      {
+        title: "Step 4: Chrome Extension Development",
+        bullets: [
+          "Built extension with MutationObserver for SPA-aware checkout detection",
+          "Implemented automatic detection across React and Next.js storefronts on 500+ sites",
+        ],
+      },
+      {
+        title: "Step 5: Payment Processing",
+        bullets: [
+          "Integrated Stripe webhooks for real-time payment event processing",
+          "Implemented complete checkout session management with success/cancel handling",
+        ],
+      },
+      {
+        title: "Step 6: Database & Storage",
+        bullets: [
+          "Utilized DynamoDB for flexible schema and horizontal scaling of card/transaction data",
+          "Designed data architecture for high-throughput payment processing",
+        ],
+      },
+      {
+        title: "Step 7: Deployment & Infrastructure",
+        bullets: [
+          "Deployed on AWS with PostgreSQL + Redis data layer",
+          "Implemented Docker + GitHub Actions CI/CD across 8+ feature branches",
+        ],
+      },
+      {
+        title: "Step 8: Monitoring & Dashboard",
+        bullets: [
+          "Built real-time fraud monitoring dashboard with live ML inference",
+          "Implemented comprehensive logging and error tracking for production stability",
         ],
       },
     ],
