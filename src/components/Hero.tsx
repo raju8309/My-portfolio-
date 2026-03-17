@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Right Content - Profile Image */}
           <Reveal className="relative flex justify-center lg:justify-end" delay={0.12}>
             <div className="relative w-full max-w-[520px]">
-              <div className="relative h-[460px] md:h-[560px] w-full bg-black rounded-2xl overflow-hidden">
+              <div className="relative h-[460px] md:h-[560px] w-full bg-black rounded-none overflow-hidden">
                 <img
                   src={profileImage}
                   alt="Raju Kotturi profile"
