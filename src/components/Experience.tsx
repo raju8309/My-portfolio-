@@ -15,7 +15,7 @@ const Experience = () => {
 
   return (
     <section id="resume" className="bg-gray-100 bg-dotted">
-      {/* PaySplit Section - full green background */}
+      {/* PaySplit Section */}
       <div className="w-full bg-gradient-to-b from-[#E6F0EA] via-[#DDEAE2] to-[#E6F0EA] py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <Reveal className="mb-16" delay={0}>
@@ -48,7 +48,11 @@ const Experience = () => {
               "Implemented CI/CD using Docker and GitHub Actions with automated testing across multiple branches.",
               "Built as a 3-person co-founding team in under 6 months while completing a graduate degree, with a real-time fraud monitoring dashboard live in production on AWS.",
             ].map((item, index) => (
-              <StaggerItem key={index} delay={index * 0.1} className="flex items-start gap-4">
+              <StaggerItem
+                key={index}
+                delay={index * 0.08}
+                className="flex items-start gap-4"
+              >
                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-3.5 h-3.5 text-white"
@@ -69,9 +73,7 @@ const Experience = () => {
             ))}
           </Stagger>
 
-          {/* PaySplit Featured Project Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left Side */}
             <Reveal className="space-y-6 lg:space-y-8" delay={0.2}>
               <div>
                 <div className="flex items-center space-x-2 mb-6">
@@ -96,21 +98,22 @@ const Experience = () => {
                 </h3>
 
                 <p className="text-gray-700 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
-                  A fintech platform and Chrome extension that enables users
-                  to split one checkout across multiple cards using
-                  AI-powered allocation and fraud detection.
+                  A fintech platform and Chrome extension that enables users to
+                  split one checkout across multiple cards using AI-powered
+                  allocation and fraud detection.
                 </p>
               </div>
 
               <button
                 className="px-8 lg:px-10 py-4 lg:py-5 bg-[#2F5E3E] text-white font-semibold rounded-full hover:bg-[#1F3D2B] hover:scale-105 transition-all duration-300 text-lg lg:text-xl"
-                onClick={() => navigate(`/project-details#${paysplitProject?.id}`)}
+                onClick={() =>
+                  navigate(`/project-details#${paysplitProject?.id}`)
+                }
               >
                 View Case Study →
               </button>
             </Reveal>
 
-            {/* Right Side */}
             <Reveal delay={0.3}>
               <div className="flex items-center justify-center">
                 <img
@@ -127,21 +130,22 @@ const Experience = () => {
       {/* UNH Section */}
       <div className="w-full bg-gray-100">
         <div className="container mx-auto px-6 py-24">
-        <StaggerItem>
           <div className="px-8 py-8 lg:px-12 lg:py-12">
-            <div className="mb-8">
-              <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-2">
-                AI Intern
-              </h3>
-              <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
-                University of New Hampshire
-              </p>
-              <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                Aug – Dec 2025
-              </span>
-            </div>
+            <Reveal delay={0.4}>
+              <div className="mb-8">
+                <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-2">
+                  AI Intern
+                </h3>
+                <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
+                  University of New Hampshire
+                </p>
+                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
+                  Aug – Dec 2025
+                </span>
+              </div>
+            </Reveal>
 
-            <ul className="space-y-6 max-w-3xl mb-16">
+            <Stagger className="space-y-6 max-w-3xl mb-16">
               {[
                 "Improved retrieval accuracy by ~95% by building a RAG-based graduate catalog chatbot using structured chunking, reranking, and semantic similarity techniques.",
                 "Processed and transformed 100% of UNH Graduate Catalog data into structured retrieval chunks using contextual headers and metadata, enabling precise and context-aware responses.",
@@ -152,7 +156,11 @@ const Experience = () => {
                 "Collaborated in a 4-member Agile team, using GitHub workflows, code reviews, and sprint cycles to deliver continuous improvements.",
                 "Developed evaluation dashboards to track performance trends and validate improvements across iterations.",
               ].map((item, index) => (
-                <li key={index} className="flex items-start gap-4">
+                <StaggerItem
+                  key={index}
+                  delay={index * 0.08}
+                  className="flex items-start gap-4"
+                >
                   <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <svg
                       className="w-3.5 h-3.5 text-white"
@@ -169,15 +177,16 @@ const Experience = () => {
                   <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
                     {item}
                   </div>
-                </li>
+                </StaggerItem>
               ))}
-            </ul>
+            </Stagger>
 
-            {/* UNH Featured Project */}
-            <div className="bg-gradient-to-r from-[#0B3D91] to-[#003366] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl">
+            <Reveal
+              className="bg-gradient-to-r from-[#0B3D91] to-[#003366] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
+              delay={0.5}
+            >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                {/* Left Side */}
-                <div className="space-y-6 lg:space-y-8">
+                <Reveal className="space-y-6 lg:space-y-8" delay={0.6}>
                   <div>
                     <span className="text-blue-200 text-base lg:text-lg font-medium uppercase tracking-wide">
                       Featured Internship Project
@@ -193,28 +202,28 @@ const Experience = () => {
                   </div>
 
                   <button
-                    className="px-8 lg:px-10 py-4 lg:py-5 bg-white text-[#0B3D91] font-semibold rounded-full hover:bg-blue-50 transition-colors text-lg lg:text-xl"
+                    className="px-8 lg:px-10 py-4 lg:py-5 bg-white text-[#0B3D91] font-semibold rounded-full hover:bg-blue-50 hover:scale-105 transition-all duration-300 text-lg lg:text-xl"
                     onClick={() => navigate(`/project-details#${unhProject?.id}`)}
                   >
                     View Case Study →
                   </button>
-                </div>
+                </Reveal>
 
-                {/* Right Side */}
-                <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg lg:shadow-xl">
-                  <div className="h-80 lg:h-96 bg-gray-50 flex items-center justify-center p-4 lg:p-6">
-                    <img
-                      src={unhProject?.image}
-                      alt="ASK UNH Graduate Catalog Chatbot Interface"
-                      className="w-full h-full object-contain rounded-lg"
-                    />
+                <Reveal delay={0.7}>
+                  <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg lg:shadow-xl">
+                    <div className="h-80 lg:h-96 bg-gray-50 flex items-center justify-center p-4 lg:p-6">
+                      <img
+                        src={unhProject?.image}
+                        alt="ASK UNH Graduate Catalog Chatbot Interface"
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               </div>
-            </div>
+            </Reveal>
           </div>
-        </StaggerItem>
-      </div>
+        </div>
       </div>
     </section>
   );

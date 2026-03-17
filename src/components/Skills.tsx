@@ -25,7 +25,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-gray-100">
+    <section id="skills" className="py-24 bg-gray-100 scroll-mt-24">
       <div className="container mx-auto px-6">
         <Reveal className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-black">
