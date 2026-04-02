@@ -96,7 +96,7 @@ const Experience = () => {
                         d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 12V8a1 1 0 012 0v4a1 1 0 11-2 0zm1-7a1 1 0 100 2 1 1 0 000-2z"
                       />
                     </svg>
-                    Chrome Extension · Works at Checkout
+                    Chrome Extension · Works at Checkout    ·  <a href="https://www.paysplit.in/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-bold underline transition-colors">Website →</a>
                   </span>
                 </div>
 

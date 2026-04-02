@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import profileImage from "@/data/profile.png";
 import { Reveal } from "./Motion";
@@ -18,7 +18,7 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg lg:max-w-xl">
-              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of experience</span>, built through an internship and multiple end-to-end projects.
+              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">years of experience</span>, built through an internship and multiple end-to-end projects.
               I work across <span className="text-white font-medium">LLMs / GenAI</span>, <span className="text-white font-medium">RAG</span>, <span className="text-white font-medium">embeddings</span>, <span className="text-white font-medium">fine-tuning</span>, <span className="text-white font-medium">classical ML</span>, <span className="text-white font-medium">NLP</span>, <span className="text-white font-medium">Deep Learning</span>, <span className="text-white font-medium">Computer Vision</span>, and <span className="text-white font-medium">MLOps</span>—from experimentation to deployment and monitoring.
             </p>
 
@@ -28,22 +28,20 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-3 lg:gap-4 pt-2 lg:pt-4">
-              <a
-                href="https://github.com/raju8309"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
+              <button
+                onClick={() => window.open('https://github.com/raju8309', '_blank')}
+                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg border border-gray-600"
+                title="GitHub"
               >
                 <Github size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/raju-kotturi-609674304/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
+              </button>
+              <button
+                onClick={() => window.open('https://www.linkedin.com/in/raju-kotturi-609674304/', '_blank')}
+                className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg border border-gray-600"
+                title="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
+              </button>
             </div>
 
             {/* CTA Buttons */}

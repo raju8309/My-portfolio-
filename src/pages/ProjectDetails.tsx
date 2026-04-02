@@ -834,6 +834,16 @@ const PaySplitCaseStudy = () => {
         <h3 className="text-2xl font-bold text-black mb-2">💳 PaySplit AI</h3>
         <p className="text-sm text-gray-700">Fintech Platform Development</p>
         <p className="text-sm text-gray-600 mt-1">Co-Founder & AI/ML Engineer • 3-Person Founding Team</p>
+        <div className="mt-3">
+          <a
+            href="https://www.paysplit.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-gray-700 font-normal text-sm transition-colors"
+          >
+            paysplit.in
+          </a>
+        </div>
       </div>
 
       <div className="relative">
@@ -981,6 +991,14 @@ const ProjectDetails = () => {
                         GitHub
                       </a>
                     )}
+                    <button
+                      onClick={() => window.open('https://www.paysplit.in/', '_blank')}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-green-600 bg-transparent hover:bg-green-600 text-green-600 hover:text-white font-bold transition-all duration-200 text-sm px-4 py-2 group"
+                      title="Live Demo"
+                    >
+                      <ExternalLink size={16} className="text-green-600 group-hover:text-white" />
+                      Live Demo
+                    </button>
                     {project.demoUrl && (
                       <Button asChild variant="glow">
                         <a href={project.demoUrl} target="_blank" rel="noreferrer">
