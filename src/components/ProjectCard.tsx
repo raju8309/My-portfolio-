@@ -1,6 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "./ui/button";
+import { ProjectActions } from "./ProjectActions";
 import { Reveal, StaggerItem } from "./Motion";
 
 interface Project {
@@ -71,48 +70,12 @@ const ProjectCard = ({ project, showLabel = false, label }: ProjectCardProps) =>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-2">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="rounded-full border-gray-400 text-gray-800 hover:bg-gray-100 hover:border-gray-500 transition-colors text-xs px-3 py-1"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate(`/project-details#${project.id}`);
-              }}
-            >
-              View Details
-              <ExternalLink size={12} className="ml-1" />
-            </Button>
-            
-            {project.demoUrl && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-full border-blue-500 text-blue-600 hover:bg-blue-50 hover:border-blue-600 transition-colors text-xs px-3 py-1"
-                asChild
-                onClick={(e) => e.stopPropagation()}
-              >
-                <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                  <ExternalLink size={12} className="mr-1" />
-                  Demo
-                </a>
-              </Button>
-            )}
-            
-            {project.githubUrl && (
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-600 bg-transparent hover:bg-gray-900 text-black hover:text-white font-bold transition-all duration-200 text-xs px-3 py-1"
-              >
-                <Github size={12} className="text-black group-hover:text-white" />
-                Code
-              </a>
-            )}
-          </div>
+          <ProjectActions
+            projectId={project.id}
+            demoUrl={project.demoUrl}
+            githubUrl={project.githubUrl}
+            size="sm"
+          />
         </div>
       </div>
     </div>

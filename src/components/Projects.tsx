@@ -1,7 +1,6 @@
-import { ExternalLink, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
-import { Button } from "./ui/button";
+import { ProjectActions } from "./ProjectActions";
 import { Reveal, Stagger, StaggerItem } from "./Motion";
 
 const Projects = () => {
@@ -72,48 +71,12 @@ const Projects = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-3">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="rounded-full border-gray-400 text-gray-800 hover:bg-gray-100 hover:border-gray-500 transition-colors text-sm px-4 py-2"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate(`/project-details#${project.id}`);
-                        }}
-                      >
-                        View Details
-                        <ExternalLink size={14} className="ml-2" />
-                      </Button>
-                      
-                      {project.demoUrl && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="rounded-full border-blue-500 text-blue-600 hover:bg-blue-50 hover:border-blue-600 transition-colors text-sm px-4 py-2"
-                          asChild
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                            <ExternalLink size={14} className="mr-2" />
-                            Demo
-                          </a>
-                        </Button>
-                      )}
-                      
-                      {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-600 bg-transparent hover:bg-gray-900 text-black hover:text-white font-bold transition-all duration-200 text-sm px-4 py-2"
-                        >
-                          <Github size={14} className="text-black group-hover:text-white" />
-                          Code
-                        </a>
-                      )}
-                    </div>
+                    <ProjectActions
+                      projectId={project.id}
+                      demoUrl={project.demoUrl}
+                      githubUrl={project.githubUrl}
+                      size="md"
+                    />
                   </div>
                 </div>
               </StaggerItem>

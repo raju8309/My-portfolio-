@@ -83,7 +83,7 @@ const Experience = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <Reveal className="space-y-6 lg:space-y-8" delay={0.2}>
               <div>
-                <div className="flex items-center space-x-2 mb-6">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
                   <span className="bg-[#D6E8DD] text-[#2F5E3E] text-sm lg:text-base font-medium px-4 py-2 rounded-full flex items-center">
                     <svg
                       className="w-4 h-4 mr-2"
@@ -96,8 +96,19 @@ const Experience = () => {
                         d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 12V8a1 1 0 012 0v4a1 1 0 11-2 0zm1-7a1 1 0 100 2 1 1 0 000-2z"
                       />
                     </svg>
-                    Chrome Extension · Works at Checkout    ·  <a href="https://www.paysplit.in/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-bold underline transition-colors">Website →</a>
+                    Chrome Extension · Works at Checkout
                   </span>
+                  <a
+                    href="https://www.paysplit.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2F5E3E] text-white font-semibold hover:bg-[#1F3D2B] transition-all duration-200 text-sm px-5 py-2"
+                  >
+                    Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
 
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#1F3D2B] mt-3 mb-6 leading-tight">

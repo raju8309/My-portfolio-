@@ -323,7 +323,7 @@ export const projects = [
     tech: ["React", "FastAPI", "XGBoost", "PyTorch", "Chrome Extension", "DynamoDB", "Stripe", "AWS", "Docker", "CI/CD"],
     image: paysplitImage,
     githubUrl: "https://github.com/raju8309/PaySplit.AI-startup",
-    demoUrl: "",
+    demoUrl: "https://www.paysplit.in/",
     implementation: [
       {
         title: "Step 1: Architecture Design",
