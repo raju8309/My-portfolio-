@@ -167,23 +167,23 @@ const UNHCaseStudy = () => (
   </div>
 );
 
-const PhotoMentorCaseStudy = () => (
+const AriaCaseStudy = () => (
   <div className="space-y-6 text-slate-300">
     <div>
-      <h3 className="text-xl font-bold text-white mb-3">📸 PhotoMentorAI - Project Case Study</h3>
+      <h3 className="text-xl font-bold text-white mb-3">🤖 Aria — Autonomous Customer Support Agent</h3>
       
       <div className="space-y-4">
         <div>
           <h4 className="text-lg font-semibold text-emerald-400 mb-2">Overview</h4>
           <p className="text-sm leading-relaxed">
-            Created an AI photography assistant that helps people take better photos using real-time computer vision. Think of it as having a professional photographer looking over your shoulder, giving instant feedback on lighting, composition, and timing while you're taking pictures.
+            Built an autonomous customer support agent that resolves tickets end-to-end without human handoff on the happy path. Aria uses a 5-node LangGraph state machine with explicit state management, making every conversation pauseable, inspectable, and resumable. Think of it as having a support agent that never sleeps, never gets tired, and always knows when to ask for help.
           </p>
         </div>
 
         <div>
           <h4 className="text-lg font-semibold text-emerald-400 mb-2">The Problem</h4>
           <p className="text-sm leading-relaxed">
-            Most people struggle with photography basics - lighting, composition, and timing. Even with great cameras, they end up with disappointing photos because they don't know the technical aspects of good photography. Professional photography knowledge is complex and not easily accessible to beginners.
+            Customer support is the largest cost center in most consumer products and the slowest channel for users. Off-the-shelf chatbots fail because they hallucinate, escalate too aggressively, and can't carry multi-turn context. Building a real autonomous agent requires explicit state, retrieval grounding, and a principled escalation system that knows when to stop and ask for help.
           </p>
         </div>
 
@@ -192,54 +192,64 @@ const PhotoMentorCaseStudy = () => (
           
           <div className="space-y-3 ml-4">
             <div>
-              <h5 className="font-medium text-white mb-1">Real-Time Vision System</h5>
+              <h5 className="font-medium text-white mb-1">The Graph Architecture</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Live Camera Analysis: Built system that analyzes video frames in real-time from phone cameras</li>
-                <li>Face Detection: Instantly finds faces in the frame and analyzes their positioning</li>
-                <li>Light Detection: Measures brightness, shadows, and lighting conditions</li>
-                <li>Composition Analysis: Evaluates photo composition using photography rules</li>
+                <li><strong>5-Node LangGraph:</strong> Triage → Retrieve → Agent → Evaluate → (Reply | Escalate)</li>
+                <li><strong>Stateful Checkpointing:</strong> Every conversation state can be paused, inspected, and resumed</li>
+                <li><strong>Pure Functions:</strong> Each node is a pure function over conversation state with explicit routing</li>
+                <li><strong>Claude Sonnet 4.5:</strong> Agent node generates responses grounded in retrieved citations</li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-medium text-white mb-1">AI Intelligence</h5>
+              <h5 className="font-medium text-white mb-1">Two-Layer Escalation System</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Emotion Recognition: Uses deep learning to detect smiles and expressions</li>
-                <li>Timing Analysis: Predicts the best moment to capture based on facial expressions</li>
-                <li>Voice Guidance: Provides spoken instructions for hands-free photography help</li>
-                <li>Smart Suggestions: Gives specific advice like "Move left" or "More light needed"</li>
+                <li><strong>Layer 1 - Regex Pre-checks:</strong> Fast, cheap detection of obvious triggers (legal language, explicit human request)</li>
+                <li><strong>Layer 2 - LLM Evaluation:</strong> Nuanced detection of frustration patterns and repeated failures</li>
+                <li><strong>7 Trigger Types:</strong> Legal threats, severe sentiment, low confidence, repeated failures, sensitive topics, policy edges, explicit user request</li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-medium text-white mb-1">Technical Implementation</h5>
+              <h5 className="font-medium text-white mb-1">Retrieval-Augmented Generation</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Optimized Models: Used ONNX for fast AI inference on mobile devices</li>
-                <li>Real-Time Processing: Built pipeline that processes frames instantly without lag</li>
-                <li>Cross-Platform: Works on both web browsers and mobile devices</li>
-                <li>Privacy First: All processing happens locally, no images sent to servers</li>
+                <li><strong>Chroma Vector Store:</strong> Every response grounded in citations from knowledge base</li>
+                <li><strong>Citation Requirement:</strong> Agent must attach citation IDs to factual claims</li>
+                <li><strong>Evaluator Validation:</strong> Rejects answers without proper citation IDs</li>
+                <li><strong>Frontend Rendering:</strong> Users see exactly which document each statement came from</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Results & Impact</h4>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Testing & Quality</h4>
           <ul className="text-sm space-y-1 ml-4 list-disc">
-            <li><strong>Real-Time Feedback:</strong> Provides instant guidance while taking photos</li>
-            <li><strong>85% Better Photos:</strong> Users report significant improvement in photo quality</li>
-            <li><strong>Voice Guidance:</strong> Hands-free help for photographers</li>
-            <li><strong>Privacy Safe:</strong> All AI processing happens on user's device</li>
+            <li><strong>27-Test pytest Suite:</strong> Deterministic conversation fixtures for regression testing</li>
+            <li><strong>Mocked LLM Interface:</strong> Tests run without API calls, no flakiness</li>
+            <li><strong>End-to-End Coverage:</strong> Routing logic, output parsing, graph execution</li>
+            <li><strong>Fast Feedback:</strong> Full test suite runs in seconds, catches regressions before shipping</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Business Value</h4>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Results & Impact</h4>
           <ul className="text-sm space-y-1 ml-4 list-disc">
-            <li><strong>Democratizes Photography:</strong> Makes professional photography knowledge accessible to everyone</li>
-            <li><strong>Educational Tool:</strong> Helps users learn photography techniques through practice</li>
-            <li><strong>Innovation Showcase:</strong> Demonstrates advanced computer vision capabilities</li>
-            <li><strong>Practical AI:</strong> Shows how AI can enhance everyday creative activities</li>
+            <li><strong>End-to-End Resolution:</strong> Multi-turn tickets resolved without human handoff on happy path</li>
+            <li><strong>Zero Ungrounded Responses:</strong> Every claim cited through evaluator validation</li>
+            <li><strong>Clear Separation:</strong> New escalation trigger = 1 regex line + test; new tool = new node + edge</li>
+            <li><strong>Transparent Decisions:</strong> Operations console shows exactly why agent chose to escalate or respond</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Technical Stack</h4>
+          <ul className="text-sm space-y-1 ml-4 list-disc">
+            <li><strong>Python · LangGraph · FastAPI</strong> — Agent orchestration and backend API</li>
+            <li><strong>Anthropic Claude Sonnet 4.5</strong> — LLM for response generation</li>
+            <li><strong>Chroma</strong> — Vector store for knowledge base citations</li>
+            <li><strong>React · Vite · Tailwind</strong> — Operations console frontend</li>
+            <li><strong>pytest</strong> — Deterministic testing with mocked LLM</li>
           </ul>
         </div>
       </div>
@@ -247,23 +257,23 @@ const PhotoMentorCaseStudy = () => (
   </div>
 );
 
-const SafeLinkCaseStudy = () => (
+const ClinicalAICaseStudy = () => (
   <div className="space-y-6 text-slate-300">
     <div>
-      <h3 className="text-xl font-bold text-white mb-3">🏥 SafeLink AI - Project Case Study</h3>
+      <h3 className="text-xl font-bold text-white mb-3">🏥 ClinicalAI — Multilingual Patient Assistant</h3>
       
       <div className="space-y-4">
         <div>
           <h4 className="text-lg font-semibold text-emerald-400 mb-2">Overview</h4>
           <p className="text-sm leading-relaxed">
-            Built a health assistant that helps people find nearby medical facilities and assess symptoms. Think of it as a smart health companion that quickly evaluates health concerns and directs people to appropriate medical care, potentially saving lives in emergency situations.
+            A full-stack multilingual patient assistant built specifically for small and independent clinics. It gives doctors AI-powered symptom analysis with explainable diagnosis, automated SOAP note generation from doctor-patient conversations, and voice-to-text symptom input in English, Hindi, and Spanish — all deployable for under $7/month, making enterprise-grade clinical AI accessible to any clinic.
           </p>
         </div>
 
         <div>
           <h4 className="text-lg font-semibold text-emerald-400 mb-2">The Problem</h4>
           <p className="text-sm leading-relaxed">
-            People often don't know where to go for medical care, especially in emergencies or when traveling. They waste precious time searching for hospitals, don't know which facilities handle their specific needs, and may delay seeking care due to uncertainty about symptoms severity.
+            Small clinics (90% of US medical practices) are priced out of AI tools. Enterprise solutions cost thousands per month and require IT infrastructure they can't afford. Meanwhile, doctors spend 2 hours daily on documentation, and 67M+ non-English speakers face language barriers describing symptoms accurately.
           </p>
         </div>
 
@@ -272,54 +282,73 @@ const SafeLinkCaseStudy = () => (
           
           <div className="space-y-3 ml-4">
             <div>
-              <h5 className="font-medium text-white mb-1">Symptom Analysis System</h5>
+              <h5 className="font-medium text-white mb-1">ML Symptom Classification</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Symptom Processing: Built AI that understands and analyzes health symptoms described in natural language</li>
-                <li>Risk Assessment: Evaluates urgency levels and recommends appropriate care levels</li>
-                <li>Safety First: Designed to err on the side of caution for serious symptoms</li>
-                <li>Clear Guidance: Provides easy-to-understand recommendations</li>
+                <li><strong>Dataset:</strong> 4,920 samples, 41 diseases, 131 symptoms from Kaggle Disease-Symptom dataset</li>
+                <li><strong>Model:</strong> Logistic Regression + TF-IDF achieved 98% cross-validated accuracy (beat RF, SVM, XGBoost)</li>
+                <li><strong>Explainable:</strong> Ranked conditions with confidence scores, triggered symptoms, plain-language explanations</li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-medium text-white mb-1">Hospital Finder</h5>
+              <h5 className="font-medium text-white mb-1">Claude Sonnet LLM Pipelines</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Location Services: Uses GPS to find nearest medical facilities</li>
-                <li>Facility Details: Provides information about hospital capabilities, wait times, and services</li>
-                <li>Directions Integration: Offers turn-by-turn navigation to selected facilities</li>
-                <li>Emergency Prioritization: Highlights emergency rooms and urgent care centers</li>
+                <li><strong>Symptom Analysis:</strong> Takes patient description, runs ML classifier, generates structured diagnosis with urgency and next steps</li>
+                <li><strong>SOAP Notes:</strong> Transforms raw doctor-patient conversation into structured Subjective, Objective, Assessment, and Plan notes</li>
+                <li><strong>Clinical Safety:</strong> Prompts flag uncertainty, avoid overconfidence, always recommend professional review</li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-medium text-white mb-1">User Experience</h5>
+              <h5 className="font-medium text-white mb-1">Voice Input — OpenAI Whisper</h5>
               <ul className="text-sm space-y-1 ml-4 list-disc">
-                <li>Simple Interface: Clean, calming design for stressful health situations</li>
-                <li>Quick Actions: One-tap emergency calling and directions</li>
-                <li>Mobile Optimized: Works perfectly on phones for on-the-go use</li>
-                <li>Accessibility: Designed for users of all ages and technical abilities</li>
+                <li><strong>Lightweight:</strong> API-based approach keeps Docker image under 300MB vs 2GB+ local model</li>
+                <li><strong>Multilingual:</strong> English, Hindi, Spanish support for text and voice transcription</li>
+                <li><strong>Seamless:</strong> Audio transcribed and fed directly into symptom analysis flow</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-medium text-white mb-1">Full-Stack Architecture</h5>
+              <ul className="text-sm space-y-1 ml-4 list-disc">
+                <li><strong>Backend:</strong> FastAPI with JWT auth, SQLAlchemy ORM, PostgreSQL for patient history</li>
+                <li><strong>Frontend:</strong> React SPA with Symptom Checker, Note Writer, Patient History views</li>
+                <li><strong>PDF Export:</strong> SOAP notes downloadable via jsPDF</li>
+                <li><strong>CI/CD:</strong> Five-stage GitHub Actions pipeline in under 3 minutes</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Results & Impact</h4>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Key Technical Decisions</h4>
           <ul className="text-sm space-y-1 ml-4 list-disc">
-            <li><strong>Fast Help:</strong> Reduces time to find medical care by 75%</li>
-            <li><strong>Life-Saving:</strong> Prioritizes emergency situations for quick action</li>
-            <li><strong>Reduced Anxiety:</strong> Provides clear guidance during health concerns</li>
-            <li><strong>Wide Coverage:</strong> Works across all regions with hospital data</li>
+            <li><strong>Logistic Regression over Deep Learning:</strong> Interpretability is a clinical requirement — doctors can see which features drove predictions</li>
+            <li><strong>Whisper API over Local:</strong> Keeps container under 300MB for Render's free tier</li>
+            <li><strong>FastAPI over Django/Flask:</strong> Async support, auto OpenAPI docs, Pydantic validation for concurrent ML APIs</li>
+            <li><strong>Render over AWS:</strong> Simplicity and automatic SSL vs operational overhead of EC2, ECR, VPC</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Business Value</h4>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Results & Impact</h4>
           <ul className="text-sm space-y-1 ml-4 list-disc">
-            <li><strong>Public Health:</strong> Improves community health outcomes through faster care access</li>
-            <li><strong>Emergency Preparedness:</strong> Valuable tool for disaster and emergency situations</li>
-            <li><strong>Healthcare Efficiency:</strong> Helps direct patients to appropriate care levels</li>
-            <li><strong>Social Impact:</strong> Addresses real community needs with practical technology</li>
+            <li><strong>98% Accuracy:</strong> Symptom classifier on 41 diseases with 131 symptoms</li>
+            <li><strong>3+ Hours Saved Daily:</strong> SOAP notes: 10 min → 30 sec per visit (20 patients/day)</li>
+            <li><strong>67M+ Non-English Speakers:</strong> Multilingual voice removes language barriers</li>
+            <li><strong>$7/Month Cost:</strong> 1/100th the cost of Google MedLM, Microsoft DAX</li>
+            <li><strong>Under 500ms:</strong> API response time for real-time decision support</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Technical Stack</h4>
+          <ul className="text-sm space-y-1 ml-4 list-disc">
+            <li><strong>Python · FastAPI · React</strong> — Full-stack development</li>
+            <li><strong>Anthropic Claude Sonnet</strong> — LLM for diagnosis and SOAP generation</li>
+            <li><strong>OpenAI Whisper API</strong> — Multilingual voice transcription</li>
+            <li><strong>scikit-learn · PostgreSQL · Docker</strong> — ML, database, deployment</li>
+            <li><strong>GitHub Actions · Render</strong> — CI/CD and hosting</li>
           </ul>
         </div>
       </div>
@@ -340,10 +369,10 @@ const ProjectCaseStudy = ({ projectId }: ProjectCaseStudyProps) => {
         return <FakeJobCaseStudy />;
       case 'unh-graduate-catalog-chatbot':
         return <UNHCaseStudy />;
-      case 'photomentor-ai':
-        return <PhotoMentorCaseStudy />;
-      case 'safelink-ai':
-        return <SafeLinkCaseStudy />;
+      case 'aria-customer-support':
+        return <AriaCaseStudy />;
+      case 'clinical-ai':
+        return <ClinicalAICaseStudy />;
       default:
         return null;
     }

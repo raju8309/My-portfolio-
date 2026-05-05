@@ -1,186 +1,184 @@
-import photomentorImage from "./photomentor.png";
-import safelinkImage from "./safelink.png";
+import ariaImage from "./aria.png";
+import clinicalaiImage from "./clinical.png";
 import fakeJobImage from "./fakejobdetecor.png";
 import unhChatbotImage from "./unh-chatbot.png";
 import paysplitImage from "./paysplit.png";
 
 export const projects = [
   {
-    id: "photomentor-ai",
-    title: "PhotoMentorAI",
-    subtitle: "Real-time Computer Vision Photography Assistant.",
+    id: "aria-customer-support",
+    title: "Aria — Autonomous Customer Support Agent",
+    subtitle: "LangGraph · FastAPI · React · Anthropic Claude · Chroma",
     description:
-      "A high-performance AI photography assistant that analyzes live camera feeds using computer vision and deep-learning emotion recognition to provide instant visual and voice-based shooting guidance.",
+      "An autonomous customer support agent that resolves tickets end-to-end without human handoff on the happy path. Built with a 5-node LangGraph state machine, two-layer escalation system, and retrieval-augmented generation with citation grounding.",
     highlights: [
-      "Developed end-to-end AI inference pipelines using ONNX-optimized FER+ models for high-speed analysis.",
-      "Implemented low-latency multi-face detection and sentiment analysis for group portraits.",
-      "Containerized using Docker to ensure consistent deployment across various edge environments.",
+      "Built 5-node LangGraph state machine with stateful checkpointing for pause/resume/inspect capabilities",
+      "Implemented two-layer escalation system (regex pre-checks + LLM evaluation) with 7 trigger types to prevent over-escalation",
+      "Retrieval-augmented generation with Chroma vector store — every claim cited, zero ungrounded responses",
+      "27-test pytest suite with deterministic conversation fixtures for regression testing without API calls",
     ],
-    tech: ["React", "FastAPI", "Python", "OpenCV", "Deep Learning", "ONNX", "Docker"],
-    image: photomentorImage,
-    githubUrl: "https://github.com/raju8309/photo-mentor-ai",
-    demoUrl: "https://photo-mentor-ai-six.vercel.app",
+    tech: ["Python", "LangGraph", "FastAPI", "React", "Anthropic Claude Sonnet", "Chroma", "pytest", "Vite", "Tailwind"],
+    image: ariaImage,
+    githubUrl: "https://github.com/raju8309/Aria_agent-",
+    demoUrl: "",
     implementation: [
       {
-        title: "Step 1: Project Initialization",
+        title: "Step 1: LangGraph State Machine Design",
         bullets: [
-          "Set up a full-stack architecture using React (frontend) and FastAPI (backend).",
-          "Established API communication between frontend and backend.",
+          "Structured Aria as a 5-node graph: triage → retrieve → agent → evaluate → (reply | escalate)",
+          "Implemented stateful checkpointing for pause/resume/inspect capabilities",
+          "Each node as pure function over conversation state with explicit routing logic",
         ],
       },
       {
-        title: "Step 2: Live Camera Integration",
+        title: "Step 2: Triage & Intent Classification",
         bullets: [
-          "Accessed the device camera using getUserMedia.",
-          "Rendered a real-time video stream inside the React app.",
-          "Captured frames using an off-screen <canvas>.",
+          "Built triage node to classify intent and assess risk level",
+          "Implemented initial routing decisions based on user message analysis",
         ],
       },
       {
-        title: "Step 3: Frame Transmission to Backend",
+        title: "Step 3: Retrieval-Augmented Generation",
         bullets: [
-          "Converted captured frames into base64-encoded images.",
-          "Sent frames to backend via POST /analyze_frame API.",
+          "Integrated Chroma vector store for knowledge base citations",
+          "Required citation IDs for all factual claims in agent responses",
+          "Built retrieval node to pull relevant context before agent generation",
         ],
       },
       {
-        title: "Step 4: Backend Image Processing",
+        title: "Step 4: Agent Node with Claude Sonnet",
         bullets: [
-          "Decoded base64 images into OpenCV frames.",
-          "Converted frames to grayscale for efficient processing.",
-          "Calculated scene brightness for exposure analysis.",
+          "Implemented agent node using Anthropic Claude Sonnet 4.5",
+          "Generated responses grounded in retrieved citations",
+          "Attached citation IDs to every factual claim",
         ],
       },
       {
-        title: "Step 5: Face Detection",
+        title: "Step 5: Two-Layer Escalation System",
         bullets: [
-          "Detected faces in the frame using computer vision techniques.",
-          "Determined whether a subject is present in the scene.",
+          "Layer 1: Regex pre-checks for fast/cheap detection (legal language, profanity, explicit human request)",
+          "Layer 2: LLM contextual evaluation for nuanced triggers (frustration patterns, repeated failures)",
+          "7 trigger types: legal threats, severe sentiment, low confidence, repeated failures, sensitive topics, policy edges, explicit user request",
         ],
       },
       {
-        title: "Step 6: Exposure & Composition Analysis",
+        title: "Step 6: Evaluation & Confidence Checking",
         bullets: [
-          "Generated exposure feedback (too dark / too bright / balanced).",
-          "Analyzed face positioning to provide composition guidance.",
+          "Built evaluator node for confidence scoring and output validation",
+          "Implemented criteria for determining when to reply vs escalate",
+          "Validated response quality before sending to user",
         ],
       },
       {
-        title: "Step 7: Timing & Capture Logic",
+        title: "Step 7: Testing Infrastructure",
         bullets: [
-          "Computed a timing score based on scene readiness.",
-          "Generated actionable hints such as “Capture now” or “Wait”.",
+          "Created 27-test pytest suite covering routing logic and output parsing",
+          "Built end-to-end graph execution tests with mocked LLM at LangChain interface",
+          "Deterministic conversation fixtures for regression testing without API calls",
         ],
       },
       {
-        title: "Step 8: Deep Learning Emotion Detection",
+        title: "Step 8: Frontend Operations Console",
         bullets: [
-          "Integrated a FER+ deep-learning emotion model (ONNX).",
-          "Inferred facial expressions with confidence scores.",
-          "Replaced unreliable rule-based smile detection.",
+          "Built Vite + Tailwind React console with 6 navigable views",
+          "Live backend health, KB citation display, escalation-trigger panel",
+          "Conversation history, knowledge base browser, and metrics dashboard",
         ],
       },
       {
-        title: "Step 9: Real-Time UI Feedback",
+        title: "Step 9: Backend API with FastAPI",
         bullets: [
-          "Displayed lighting, composition, timing, and expression results.",
-          "Updated feedback dynamically for every frame.",
-        ],
-      },
-      {
-        title: "Step 10: Voice-Based Guidance",
-        bullets: [
-          "Added real-time speech feedback using the Web Speech API.",
-          "Enabled short cues like “Capture now” for hands-free usage.",
-        ],
-      },
-      {
-        title: "Step 11: Environment Configuration",
-        bullets: [
-          "Introduced .env.example files for configuration clarity.",
-          "Secured environment variables for local and production use.",
-        ],
-      },
-      {
-        title: "Step 12: Deployment",
-        bullets: [
-          "Deployed backend on Render.",
-          "Deployed frontend on Vercel.",
-          "Verified end-to-end real-time inference in production.",
+          "Implemented FastAPI backend for conversation state management",
+          "Built REST endpoints for graph execution and state inspection",
+          "Integrated with LangGraph runtime for production deployment",
         ],
       },
     ],
   },
   {
-    id: "safelink-ai",
-    title: "SafeLink AI",
-    subtitle: "Intelligent Full-Stack Health & Emergency Assistant.",
+    id: "clinical-ai",
+    title: "ClinicalAI — Multilingual Patient Assistant",
+    subtitle: "AI-Powered Clinical Documentation & Diagnosis Support for Small Clinics",
     description:
-      "A comprehensive AI-powered health platform enabling real-time symptom analysis and nearby hospital discovery with an intelligent fallback system for high-reliability medical support.",
+      "A full-stack multilingual patient assistant designed specifically for small and independent clinics. Gives doctors AI-powered symptom analysis with explainable diagnosis, automated SOAP note generation from doctor-patient conversations, and voice-to-text symptom input in English, Hindi, and Spanish — all deployable for under $7/month.",
     highlights: [
-      "Integrated Large Language Models (LLMs) via Groq API with local Ollama fallback for uninterrupted service.",
-      "Built custom rule-based medical logic to assess risk and provide immediate triage recommendations.",
-      "Automated production deployment using robust CI/CD pipelines to ensure rapid iteration and stability.",
+      "Achieved 98% cross-validated accuracy on symptom classification using Logistic Regression with TF-IDF across 41 diseases and 131 symptoms",
+      "Reduced SOAP note documentation time from 10 minutes to under 30 seconds per patient visit — recovering over 3 hours daily for clinics seeing 20 patients",
+      "Multilingual voice support in English, Hindi, and Spanish using OpenAI Whisper API — removing language barriers for 67M+ non-English speakers in the US",
+      "Lightweight Docker deployment under 300MB on Render — making enterprise-grade clinical AI accessible to small clinics at 1/100th the cost of alternatives",
     ],
-    tech: ["React", "FastAPI", "Python", "Groq API", "Ollama", "CI/CD", "PostgeSQL"],
-    image: safelinkImage,
-    githubUrl: "https://github.com/raju8309/SAFELINK_AI",
-    demoUrl: "https://safelink-ai.vercel.app",
+    tech: ["Python", "FastAPI", "React", "Anthropic Claude Sonnet", "OpenAI Whisper API", "scikit-learn", "PostgreSQL", "Docker", "GitHub Actions", "Render"],
+    image: clinicalaiImage,
+    githubUrl: "https://github.com/raju8309/Clinical_AI",
+    demoUrl: "https://clinical-ai-1.onrender.com",
     implementation: [
       {
-        title: "Step 1: Project Setup & Architecture",
+        title: "Step 1: ML Symptom Classification",
         bullets: [
-          "Built a full-stack architecture with React (frontend) and FastAPI (backend).",
-          "Defined API contracts for symptom analysis and hospital discovery.",
+          "Trained on Kaggle Disease-Symptom dataset: 4,920 samples, 41 diseases, 131 symptom features",
+          "Evaluated Random Forest, SVM, XGBoost — Logistic Regression + TF-IDF achieved best 98% accuracy",
+          "Outputs ranked conditions with confidence scores, triggered symptoms, and plain-language explanations",
         ],
       },
       {
-        title: "Step 2: Symptom Intake UI",
+        title: "Step 2: Claude Sonnet LLM Pipelines",
         bullets: [
-          "Designed a clean form-based UX for entering symptoms and relevant context.",
-          "Validated and normalized user inputs before sending requests to backend.",
+          "Symptom Analysis Pipeline: Takes patient description, runs ML classifier, generates structured diagnosis with urgency and next steps",
+          "SOAP Note Pipeline: Transforms raw doctor-patient conversation into structured Subjective, Objective, Assessment, and Plan notes",
+          "Clinical accuracy prompts flag uncertainty, avoid overconfidence, and always recommend professional review",
         ],
       },
       {
-        title: "Step 3: LLM Integration (Primary)",
+        title: "Step 3: Voice Input with OpenAI Whisper",
         bullets: [
-          "Integrated Groq API for fast symptom reasoning and response generation.",
-          "Implemented prompt structure to produce actionable recommendations and disclaimers.",
+          "Routed audio through OpenAI Whisper API instead of local 2GB+ model",
+          "Kept Docker image under 300MB for deployment on standard web hosts",
+          "Multilingual support: English, Hindi, Spanish for both text and voice transcription",
         ],
       },
       {
-        title: "Step 4: Fallback Inference (Local)",
+        title: "Step 4: FastAPI Backend Architecture",
         bullets: [
-          "Added Ollama fallback to keep the system running when the primary LLM is unavailable.",
-          "Implemented routing/health checks to automatically switch providers.",
+          "Built FastAPI app with JWT authentication and SQLAlchemy ORM",
+          "PostgreSQL for persistent patient history with isolated records per doctor account",
+          "API endpoints for symptom checking, SOAP generation, voice transcription, and history retrieval",
+          "Docker container deployed on Render Web Service with environment variable management",
         ],
       },
       {
-        title: "Step 5: Rule-Based Risk & Triage Layer",
+        title: "Step 5: React Frontend Development",
         bullets: [
-          "Built rule-based medical logic to flag high-risk symptom combinations.",
-          "Returned urgency level and clear next actions for users.",
+          "Single-page React app with three core views: Symptom Checker, Note Writer, Patient History",
+          "Persistent language selection across sessions",
+          "SOAP note PDF download using jsPDF",
+          "Static site deployed on Render",
         ],
       },
       {
-        title: "Step 6: Nearby Hospital Discovery",
+        title: "Step 6: CI/CD Pipeline with GitHub Actions",
         bullets: [
-          "Implemented backend logic to surface nearby hospitals based on user location/search input.",
-          "Displayed hospital results with key details for quick decision-making.",
+          "Five-stage pipeline triggered on every push to main",
+          "Backend tests with pytest, React frontend build",
+          "Docker image build and push to registry",
+          "Backend deploy to Render, frontend static site update",
+          "Full pipeline completes in under 3 minutes",
         ],
       },
       {
-        title: "Step 7: Database & Persistence",
+        title: "Step 7: Testing & Quality Assurance",
         bullets: [
-          "Added PostgreSQL persistence for storing key application data as needed.",
-          "Structured the backend for maintainable data access and future expansion.",
+          "5 automated pytest tests with 100% pass rate",
+          "API response time under 500ms",
+          "Cross-validated ML model accuracy verification",
         ],
       },
       {
-        title: "Step 8: Production Deployment & CI/CD",
+        title: "Step 8: Results & Impact Analysis",
         bullets: [
-          "Automated build and deployment using CI/CD workflows.",
-          "Validated stability with repeatable deployments and environment configuration.",
+          "Metric: 98% symptom classifier accuracy, 41 diseases covered, 131 symptoms recognized",
+          "Metric: 3 languages supported, Docker image under 300MB, CI/CD under 3 minutes",
+          "Impact: Doctors save 3+ hours daily, patients overcome language barriers, clinics deploy for $7/month",
+          "Impact: Demonstrates explainable clinical AI without massive infrastructure requirements",
         ],
       },
     ],

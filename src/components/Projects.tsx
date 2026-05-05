@@ -8,8 +8,8 @@ const Projects = () => {
 
   const projectOrder = [
     "fake-job-detector",
-    "photomentor-ai",
-    "safelink-ai",
+    "aria-customer-support",
+    "clinical-ai",
   ];
 
   const orderedProjects = projectOrder
