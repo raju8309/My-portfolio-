@@ -249,6 +249,209 @@ const Experience = () => {
           </div>
         </div>
       </div>
+
+      {/* Deloitte Data Scientist Section */}
+      <div className="w-full bg-gray-100">
+        <div className="container mx-auto px-6 py-24">
+          <div className="px-8 py-8 lg:px-12 lg:py-12">
+            <Reveal delay={0.8}>
+              <div className="mb-8">
+                <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-2">
+                  Data Scientist
+                </h3>
+                <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
+                  Deloitte
+                </p>
+                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
+                  Aug – Nov 2023
+                </span>
+              </div>
+            </Reveal>
+
+            <Stagger className="space-y-6 max-w-3xl mb-16">
+              {[
+                "Built and deployed machine learning models in Python (pandas, scikit-learn) to predict customer churn, achieving 87% accuracy and helping the client prioritize retention outreach.",
+                "Engineered data pipelines to clean and process 500K+ records, reducing data prep time by 40%.",
+                "Created interactive dashboards with Plotly and Streamlit to communicate model insights to non-technical stakeholders.",
+              ].map((item, index) => (
+                <StaggerItem
+                  key={index}
+                  delay={index * 0.08}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-3.5 h-3.5 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                    {item}
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+
+            <Reveal
+              className="bg-gradient-to-r from-[#1F2937] to-[#111827] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
+              delay={0.9}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <Reveal className="space-y-6 lg:space-y-8" delay={1.0}>
+                  <div>
+                    <span className="text-gray-300 text-base lg:text-lg font-medium uppercase tracking-wide">
+                      Featured Work
+                    </span>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 leading-tight">
+                      Customer Churn Prediction
+                    </h3>
+                    <p className="text-gray-300 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
+                      Built ML models to predict customer churn with 87% accuracy, enabling data-driven retention strategies and reducing data prep time by 40%.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      Python
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      scikit-learn
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      pandas
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      Plotly
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      Streamlit
+                    </span>
+                  </div>
+                </Reveal>
+
+                <Reveal delay={1.1}>
+                  <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg lg:shadow-xl">
+                    <div className="h-80 lg:h-96 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 lg:p-6">
+                      <div className="text-center">
+                        <div className="text-6xl lg:text-7xl font-bold text-gray-800 mb-2">87%</div>
+                        <div className="text-lg lg:text-xl text-gray-700 font-medium">Model Accuracy</div>
+                        <div className="mt-4 text-sm text-gray-600">500K+ Records Processed</div>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
+      {/* Deloitte Software Engineer Intern Section */}
+      <div className="w-full bg-gray-100">
+        <div className="container mx-auto px-6 py-24">
+          <div className="px-8 py-8 lg:px-12 lg:py-12">
+            <Reveal delay={1.2}>
+              <div className="mb-8">
+                <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-2">
+                  Software Engineer Intern
+                </h3>
+                <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
+                  Deloitte
+                </p>
+                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
+                  May – Aug 2022
+                </span>
+              </div>
+            </Reveal>
+
+            <Stagger className="space-y-6 max-w-3xl mb-16">
+              {[
+                "Developed Python automation scripts across the full software development life cycle (SDLC), from requirements through testing and deployment.",
+                "Built backend data-processing utilities that automated manual reporting tasks, cutting turnaround time by 30%.",
+                "Wrote unit tests with pytest to improve code reliability and reduce regressions.",
+              ].map((item, index) => (
+                <StaggerItem
+                  key={index}
+                  delay={index * 0.08}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-6 h-6 bg-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-3.5 h-3.5 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                    {item}
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+
+            <Reveal
+              className="bg-gradient-to-r from-[#0D9488] to-[#0F766E] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
+              delay={1.3}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <Reveal className="space-y-6 lg:space-y-8" delay={1.4}>
+                  <div>
+                    <span className="text-teal-200 text-base lg:text-lg font-medium uppercase tracking-wide">
+                      Featured Work
+                    </span>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 leading-tight">
+                      Automation & Data Processing
+                    </h3>
+                    <p className="text-teal-50 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
+                      Developed Python automation scripts across the full SDLC and built backend utilities that automated manual reporting tasks, cutting turnaround time by 30%.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      Python
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      pytest
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      SDLC
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      Automation
+                    </span>
+                  </div>
+                </Reveal>
+
+                <Reveal delay={1.5}>
+                  <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg lg:shadow-xl">
+                    <div className="h-80 lg:h-96 bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center p-4 lg:p-6">
+                      <div className="text-center">
+                        <div className="text-6xl lg:text-7xl font-bold text-teal-600 mb-2">30%</div>
+                        <div className="text-lg lg:text-xl text-gray-700 font-medium">Time Reduction</div>
+                        <div className="mt-4 text-sm text-gray-600">Automated Reporting Tasks</div>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
