@@ -18,12 +18,12 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg lg:max-w-xl">
-              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of experience</span>, built through an internship and multiple end-to-end projects.
-              I work across <span className="text-white font-medium">LLMs / GenAI</span>, <span className="text-white font-medium">RAG</span>, <span className="text-white font-medium">embeddings</span>, <span className="text-white font-medium">fine-tuning</span>, <span className="text-white font-medium">classical ML</span>, <span className="text-white font-medium">NLP</span>, <span className="text-white font-medium">Deep Learning</span>, <span className="text-white font-medium">Computer Vision</span>, and <span className="text-white font-medium">MLOps</span>—from experimentation to deployment and monitoring.
+              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of professional experience</span> across <span className="text-white font-medium">Deloitte</span>, <span className="text-white font-medium">University of New Hampshire</span>, <span className="text-white font-medium">PaySplit AI</span>, and <span className="text-white font-medium">Snorkel AI</span>.
+              I design and deploy scalable full-stack AI applications and autonomous agentic workflows using modern <span className="text-white font-medium">LLM frameworks</span>, <span className="text-white font-medium">RAG</span>, and robust backend architectures.
             </p>
 
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              I completed my Master's in IT at the University of New Hampshire and I'm focused on building production-ready systems.
+              I completed my Master's in IT at the University of New Hampshire and specialize in building production-ready AI systems with expertise in <span className="text-white font-medium">Python</span>, <span className="text-white font-medium">React</span>, <span className="text-white font-medium">FastAPI</span>, <span className="text-white font-medium">PyTorch</span>, and <span className="text-white font-medium">XGBoost</span>.
             </p>
 
             {/* Social Links */}
