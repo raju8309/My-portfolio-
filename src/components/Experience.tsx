@@ -28,7 +28,7 @@ const Experience = () => {
             <div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 mb-3">
                 <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black">
-                  Co-Founder & FullStack & AI Engineer
+                  Founding Full Stack Engineer
                 </h3>
                 <div className="sm:flex-shrink-0">
                   <span className="inline-flex items-center px-4 py-1.5 bg-white border border-gray-200 rounded-full text-base sm:text-lg font-medium text-gray-700">
