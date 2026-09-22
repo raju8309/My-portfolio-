@@ -20,7 +20,7 @@ const Contact = () => {
           <Stagger className="grid sm:grid-cols-2 gap-6 mb-12">
             <StaggerItem>
               <a
-                href="mailto:rajukotturi175@gmail.com"
+                href="mailto:rajukotturi05@gmail.com"
                 className="bg-white border border-gray-200 rounded-2xl p-6 hover-lift flex items-center gap-4 group shadow-sm"
               >
                 <div className="p-3 bg-gray-100 rounded-xl group-hover:bg-gray-200 transition-colors">
@@ -28,7 +28,7 @@ const Contact = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-sm text-gray-600">Email</p>
-                  <p className="text-black font-medium">rajukotturi175@gmail.com</p>
+                  <p className="text-black font-medium">rajukotturi05@gmail.com</p>
                 </div>
               </a>
             </StaggerItem>
@@ -73,7 +73,7 @@ const Contact = () => {
 
           <Reveal delay={0.12}>
             <Button variant="glow" size="lg" asChild>
-              <a href="mailto:rajukotturi175@gmail.com">
+              <a href="mailto:rajukotturi05@gmail.com">
                 <Mail size={18} />
                 Let's Connect
               </a>

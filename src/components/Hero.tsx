@@ -18,7 +18,7 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg lg:max-w-xl">
-              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">years of experience</span>, built through an internship and multiple end-to-end projects.
+              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of experience</span>, built through an internship and multiple end-to-end projects.
               I work across <span className="text-white font-medium">LLMs / GenAI</span>, <span className="text-white font-medium">RAG</span>, <span className="text-white font-medium">embeddings</span>, <span className="text-white font-medium">fine-tuning</span>, <span className="text-white font-medium">classical ML</span>, <span className="text-white font-medium">NLP</span>, <span className="text-white font-medium">Deep Learning</span>, <span className="text-white font-medium">Computer Vision</span>, and <span className="text-white font-medium">MLOps</span>—from experimentation to deployment and monitoring.
             </p>
 
@@ -53,9 +53,9 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
-                <a href="mailto:rajukotturi175@gmail.com">
+                <a href="mailto:rajukotturi05@gmail.com">
                   <Mail size={18} />
-                  rajukotturi175@gmail.com
+                  rajukotturi05@gmail.com
                 </a>
               </Button>
             </div>
