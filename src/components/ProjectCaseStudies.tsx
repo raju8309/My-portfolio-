@@ -356,6 +356,101 @@ const ClinicalAICaseStudy = () => (
   </div>
 );
 
+const CaseReviewAgentCaseStudy = () => (
+  <div className="space-y-6 text-slate-300">
+    <div>
+      <h3 className="text-xl font-bold text-white mb-3">🏦 Case Review Agent — AI Compliance System</h3>
+
+      <div className="space-y-4">
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Overview</h4>
+          <p className="text-sm leading-relaxed">
+            Built an AI-powered investigation system for banks that automatically reviews suspicious transactions, makes escalation decisions, and critically verifies that the AI's reasoning is actually backed by the data it retrieved. The system catches a critical compliance failure: AI agents reaching the right decision for the wrong reasons.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">The Problem</h4>
+          <p className="text-sm leading-relaxed">
+            AI agents can reach the right decision for the wrong reasons. In regulated industries like banking, this is a compliance failure—even when the answer is correct. An audit trail based on invented reasoning is fiction, and auditors will reject it. Banks need systems that not only make correct decisions but can prove their work with verifiable evidence.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">My Approach</h4>
+
+          <div className="space-y-3 ml-4">
+            <div>
+              <h5 className="font-medium text-white mb-1">Tool-Based Architecture</h5>
+              <ul className="text-sm space-y-1 ml-4 list-disc">
+                <li><strong>Four Structured Tools:</strong> Customer lookup, transaction history, policy search, watchlist screening</li>
+                <li><strong>JSON Records Only:</strong> Tools return structured data, not prose, for mechanical verification</li>
+                <li><strong>Source Tracking:</strong> Every tool call logged with unique source_id (S1, S2, etc.) for citation tracking</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-medium text-white mb-1">Agent Decision Engine</h5>
+              <ul className="text-sm space-y-1 ml-4 list-disc">
+                <li><strong>Anthropic Claude:</strong> Investigator agent makes escalate/clear decisions with policy citations</li>
+                <li><strong>Mock Mode:</strong> Rule-based logic for testing without API costs</li>
+                <li><strong>AML Compliance:</strong> Decisions based on anti-money laundering regulations</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-medium text-white mb-1">Mechanical Verification System</h5>
+              <ul className="text-sm space-y-1 ml-4 list-disc">
+                <li><strong>Claim Parsing:</strong> Extracts numbers, entities, and IDs from agent reasoning</li>
+                <li><strong>Three Verdicts:</strong> SUPPORTED (facts in cited record), WRONG_SOURCE (facts in different record), UNSUPPORTED (facts don't exist)</li>
+                <li><strong>No LLM Judgment:</strong> Mechanical verification for reproducibility and auditability</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-medium text-white mb-1">Web UI for Analysts</h5>
+              <ul className="text-sm space-y-1 ml-4 list-disc">
+                <li><strong>Review Queue:</strong> Analyst interface showing case details and agent decisions</li>
+                <li><strong>Verification Display:</strong> Shows claims with source citations and verdicts</li>
+                <li><strong>Approval Workflow:</strong> Analyst can approve or reject with full audit trail visibility</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Testing & Evaluation</h4>
+          <ul className="text-sm space-y-1 ml-4 list-disc">
+            <li><strong>25 Test Cases:</strong> Planted suspicious patterns (structuring, circular flows, watchlist matches, volume spikes)</li>
+            <li><strong>Deliberate Failures:</strong> Planted broken citations to demonstrate verification system catching audit trail failures</li>
+            <li><strong>Decision Accuracy:</strong> 100% (25/25 correct escalate/clear decisions)</li>
+            <li><strong>Citation Support Rate:</strong> 95% (69/73 claims backed by cited record)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Key Insight</h4>
+          <ul className="text-sm space-y-1 ml-4 list-disc">
+            <li><strong>Correctness Alone is Insufficient:</strong> Verification revealed even right decisions can have wrong reasoning</li>
+            <li><strong>Audit Failure Mode:</strong> This passes casual review but fails an audit</li>
+            <li><strong>Regulatory Requirement:</strong> AI agents in regulated industries must prove their work, not just get answers right</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-semibold text-emerald-400 mb-2">Technical Stack</h4>
+          <ul className="text-sm space-y-1 ml-4 list-disc">
+            <li><strong>Python · FastAPI · Uvicorn</strong> — Web server and backend API</li>
+            <li><strong>Anthropic Claude</strong> — Real agent for decision making</li>
+            <li><strong>Mechanical Verification</strong> — No LLM judgment for reproducibility</li>
+            <li><strong>Web UI</strong> — Analyst review queue interface</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 interface ProjectCaseStudyProps {
   projectId: string;
 }
@@ -373,6 +468,8 @@ const ProjectCaseStudy = ({ projectId }: ProjectCaseStudyProps) => {
         return <AriaCaseStudy />;
       case 'clinical-ai':
         return <ClinicalAICaseStudy />;
+      case 'case-review-agent':
+        return <CaseReviewAgentCaseStudy />;
       default:
         return null;
     }

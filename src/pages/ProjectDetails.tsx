@@ -31,6 +31,9 @@ const clinicalaiResults = new URL("../data/clinicalai.png", import.meta.url).hre
 const paysplitProblem = new URL("../data/paysplit.png", import.meta.url).href;
 const paysplitApproach = new URL("../data/Gemini_Generated_Image_iv1ofmiv1ofmiv1o.png", import.meta.url).href;
 const paysplitResults = new URL("../data/Gemini_Generated_Image_m783gtm783gtm783.png", import.meta.url).href;
+const caseReviewProblem = new URL("../data/bank transaction.png", import.meta.url).href;
+const caseReviewApproach = new URL("../data/bank transaction.png", import.meta.url).href;
+const caseReviewResults = new URL("../data/bank transaction.png", import.meta.url).href;
 
 const FakeJobCaseStudy = () => {
   return (
@@ -881,6 +884,167 @@ const PaySplitCaseStudy = () => {
   );
 };
 
+const CaseReviewAgentCaseStudy = () => {
+  const sections = [
+    {
+      title: "Overview",
+      body: (
+        <p className="text-base leading-7 text-gray-800">
+          An AI agent that investigates flagged bank transactions, decides whether to escalate or clear them, and writes up its reasoning — plus an eval harness that checks whether its reasoning actually matches the records it looked at. That second part is the point: an agent can reach the right decision for a reason it invented. For a bank that's a compliance failure even when the answer is correct, because the audit trail is fiction.
+        </p>
+      ),
+    },
+    {
+      title: "The Problem",
+      body: (
+        <p className="text-base leading-7 text-gray-800">
+          AI agents can reach the right decision for the wrong reasons. In regulated industries like banking, this is a compliance failure—even when the answer is correct. An audit trail based on invented reasoning is fiction, and auditors will reject it. Banks need systems that not only make correct decisions but can prove their work with verifiable evidence that survives audit.
+        </p>
+      ),
+    },
+    {
+      title: "My Approach",
+      body: (
+        <div className="space-y-5">
+          <div>
+            <h5 className="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-2">
+              Tool-Based Architecture
+            </h5>
+            <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+              <li><strong>Four Structured Tools:</strong> Customer lookup, transaction history, policy search, watchlist screening — all return JSON records, not prose</li>
+              <li><strong>Source Tracking:</strong> Every tool call logged with unique source_id (S1, S2, etc.) for citation tracking</li>
+              <li><strong>Structured Data:</strong> Tools return structured records specifically for mechanical verification</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-2">
+              Agent Decision Engine
+            </h5>
+            <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+              <li><strong>Anthropic Claude:</strong> Investigator agent makes escalate/clear decisions with policy citations from AML regulations</li>
+              <li><strong>Mock Mode:</strong> Rule-based logic for testing without API costs</li>
+              <li><strong>Policy Grounding:</strong> Decisions backed by specific AML policy references</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-2">
+              Mechanical Verification System
+            </h5>
+            <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+              <li><strong>Claim Parsing:</strong> Extracts numbers, entities, and IDs from agent reasoning</li>
+              <li><strong>Three Verdicts:</strong> SUPPORTED (facts in cited record), WRONG_SOURCE (facts in different record), UNSUPPORTED (facts don't exist)</li>
+              <li><strong>No LLM Judgment:</strong> Mechanical verification for reproducibility and auditability</li>
+              <li><strong>WRONG_SOURCE Detection:</strong> Catches the failure mode that passes casual review but fails audit</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-2">
+              Web UI for Analysts
+            </h5>
+            <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+              <li><strong>Review Queue:</strong> Analyst interface showing case details, agent decisions, and verification results</li>
+              <li><strong>Verification Display:</strong> Shows claims with source citations and verdicts</li>
+              <li><strong>Approval Workflow:</strong> Analyst can approve or reject with full audit trail visibility</li>
+            </ul>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Key Technical Decisions",
+      body: (
+        <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+          <li><strong>Tool-Based Architecture:</strong> Structured tools returning JSON records instead of prose for mechanical verification</li>
+          <li><strong>Mechanical Verification:</strong> No LLM judgment ensures reproducibility and inspectability for auditors</li>
+          <li><strong>Source ID Tracking:</strong> Every tool call logged with unique IDs for traceable citation verification</li>
+          <li><strong>Mock Mode:</strong> Rule-based logic enables testing without API costs while exercising full pipeline</li>
+          <li><strong>Plain Tool Loop:</strong> Simple control flow in one file rather than complex framework abstraction</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Results & Impact",
+      body: (
+        <ul className="text-base space-y-2 ml-5 list-disc marker:text-gray-600">
+          <li><strong>100% Decision Accuracy:</strong> 25/25 correct escalate/clear decisions on test cases with planted suspicious patterns</li>
+          <li><strong>95% Citation Support Rate:</strong> 69/73 claims backed by the cited record</li>
+          <li><strong>5% Broken Citations Caught:</strong> Verification system detected deliberately planted audit trail failures</li>
+          <li><strong>WRONG_SOURCE Detection:</strong> Identified cases where decision was correct but reasoning cited wrong source</li>
+          <li><strong>Key Insight:</strong> Correctness alone is insufficient — verification revealed even right decisions can have wrong reasoning</li>
+          <li><strong>Prototype for Real Problem:</strong> Demonstrates solution for ensuring AI agents can prove their work in regulated industries</li>
+        </ul>
+      ),
+    },
+  ];
+
+  return (
+    <div className="space-y-8">
+      <div className="text-center mb-12">
+        <h3 className="text-2xl font-bold text-black mb-2">🏦 Case Review Agent — AI Compliance System</h3>
+        <p className="text-sm text-gray-700">AI-Powered Transaction Investigation & Citation Verification</p>
+        <p className="text-sm text-gray-600 mt-1">AI Engineer & Compliance Systems Developer</p>
+      </div>
+
+      <div className="relative">
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-gray-300 to-transparent -translate-x-1/2"></div>
+
+        {sections.map((section, idx) => {
+          const isRight = idx % 2 === 1;
+          const dotClass = [
+            "bg-gray-400/90",
+            "bg-gray-500/90",
+            "bg-gray-600/90",
+            "bg-gray-700/90",
+            "bg-gray-800/90",
+          ][idx % 5];
+
+          return (
+            <div key={section.title} className="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-start">
+              <div
+                className={
+                  "group relative md:max-w-xl rounded-2xl border border-gray-300 bg-white p-5 md:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" +
+                  (isRight
+                    ? " md:col-start-2 md:justify-self-start"
+                    : " md:col-start-1 md:justify-self-end")
+                }
+              >
+                <div
+                  className={
+                    "hidden md:block absolute top-6 h-3 w-3 rounded-full border border-gray-400 ring-4 ring-white " +
+                    dotClass +
+                    (isRight ? " -left-10" : " -right-10")
+                  }
+                />
+
+                <h4 className="text-2xl font-bold mb-3 tracking-tight text-black">{section.title}</h4>
+                {section.body}
+              </div>
+              {section.title === "The Problem" && (
+                <div className="hidden md:flex items-center justify-center">
+                  <img src={caseReviewProblem} alt="Problem" className="rounded-xl border border-gray-300 max-w-md w-full object-cover" />
+                </div>
+              )}
+              {section.title === "My Approach" && (
+                <div className="hidden md:flex items-center justify-center">
+                  <img src={caseReviewApproach} alt="Approach" className="rounded-xl border border-gray-300 max-w-md w-full object-cover" />
+                </div>
+              )}
+              {section.title === "Results & Impact" && (
+                <div className="hidden md:flex items-center justify-center">
+                  <img src={caseReviewResults} alt="Results" className="rounded-xl border border-gray-300 max-w-md w-full object-cover" />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 const ProjectDetails = () => {
   const { hash } = useLocation();
 
@@ -890,6 +1054,7 @@ const ProjectDetails = () => {
     "unh-graduate-catalog-chatbot",
     "aria-customer-support",
     "clinical-ai",
+    "case-review-agent",
   ];
 
   const orderedProjects = [...projects].sort(
@@ -918,6 +1083,8 @@ const ProjectDetails = () => {
         return <AriaCaseStudy />;
       case 'clinical-ai':
         return <ClinicalAICaseStudy />;
+      case 'case-review-agent':
+        return <CaseReviewAgentCaseStudy />;
       default:
         return null;
     }

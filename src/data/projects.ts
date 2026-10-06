@@ -3,6 +3,7 @@ import clinicalaiImage from "./clinical.png";
 import fakeJobImage from "./fakejobdetecor.png";
 import unhChatbotImage from "./unh-chatbot.png";
 import paysplitImage from "./paysplit.png";
+import caseReviewImage from "./bank transaction.png";
 
 export const projects = [
   {
@@ -377,6 +378,80 @@ export const projects = [
         bullets: [
           "Built real-time fraud monitoring dashboard with live ML inference",
           "Implemented comprehensive logging and error tracking for production stability",
+        ],
+      },
+    ],
+  },
+  {
+    id: "case-review-agent",
+    title: "Case Review Agent — AI Compliance System",
+    subtitle: "AI-Powered Transaction Investigation & Citation Verification System for Banking Compliance",
+    description:
+      "An AI agent that investigates flagged bank transactions, decides whether to escalate or clear them, and writes up its reasoning — plus an eval harness that checks whether its reasoning actually matches the records it looked at. That second part is the point: an agent can reach the right decision for a reason it invented. For a bank that's a compliance failure even when the answer is correct, because the audit trail is fiction.",
+    highlights: [
+      "Built tool-based architecture with source tracking (S1, S2, etc.) for every agent decision",
+      "Implemented mechanical verification system that parses claims and validates against cited records without LLM judgment",
+      "Achieved 100% decision accuracy (25/25) and 95% citation support rate (69/73) on test cases with planted suspicious patterns",
+      "Identified key insight: correctness alone is insufficient — verification revealed even right decisions can have wrong reasoning",
+    ],
+    tech: ["Python", "FastAPI", "Anthropic Claude", "Mechanical Verification", "Web UI", "Uvicorn"],
+    image: caseReviewImage,
+    githubUrl: "https://github.com/raju8309/Review_agent",
+    demoUrl: "",
+    implementation: [
+      {
+        title: "Step 1: Tool-Based Architecture Design",
+        bullets: [
+          "Designed four structured tools: customer lookup, transaction history, policy search, watchlist screening",
+          "All tools return JSON records, not prose, for mechanical verification",
+          "Every tool call logged with unique source_id (S1, S2, etc.) for citation tracking",
+        ],
+      },
+      {
+        title: "Step 2: Agent Decision Engine",
+        bullets: [
+          "Built investigator agent using Anthropic Claude for escalate/clear decisions",
+          "Agent makes decisions with proper policy citations from AML regulations",
+          "Implemented mock mode with rule-based logic for testing without API costs",
+        ],
+      },
+      {
+        title: "Step 3: Mechanical Verification System",
+        bullets: [
+          "Built checker that parses claims for numbers, entities, and IDs",
+          "Validates each claim against the cited record with three verdicts: SUPPORTED, WRONG_SOURCE, UNSUPPORTED",
+          "No LLM judgment in verification for reproducibility and auditability",
+        ],
+      },
+      {
+        title: "Step 4: Test Case Generation",
+        bullets: [
+          "Created 25 test cases with planted suspicious patterns: structuring, circular flows, watchlist matches, volume spikes",
+          "Deliberately planted broken citations to demonstrate verification system catching audit trail failures",
+        ],
+      },
+      {
+        title: "Step 5: Evaluation & Results",
+        bullets: [
+          "Achieved 100% decision accuracy (25/25 correct escalate/clear decisions)",
+          "Achieved 95% citation support rate (69/73 claims backed by cited record)",
+          "5% broken citations were caught by verification system, demonstrating audit failure detection",
+        ],
+      },
+      {
+        title: "Step 6: Web UI Development",
+        bullets: [
+          "Built analyst review queue interface showing case details, agent decisions, and verification results",
+          "Displays claims with source citations and verdicts (SUPPORTED, WRONG_SOURCE, UNSUPPORTED)",
+          "Analyst can approve or reject agent decisions with full audit trail visibility",
+        ],
+      },
+      {
+        title: "Step 7: Key Insight & Impact",
+        bullets: [
+          "Finding: correctness alone is insufficient — even right decisions can have wrong reasoning",
+          "This is the failure mode that passes casual review but fails an audit",
+          "Prototype for real compliance problem: ensuring AI agents can prove their work in regulated industries",
         ],
       },
     ],

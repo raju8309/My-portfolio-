@@ -10,6 +10,7 @@ const Projects = () => {
     "fake-job-detector",
     "aria-customer-support",
     "clinical-ai",
+    "case-review-agent",
   ];
 
   const orderedProjects = projectOrder
