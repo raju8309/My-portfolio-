@@ -18,7 +18,7 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg lg:max-w-xl">
-              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">2+ years of professional experience</span> across <span className="text-white font-medium">Deloitte</span>, <span className="text-white font-medium">University of New Hampshire</span>, <span className="text-white font-medium">PaySplit AI</span>, and <span className="text-white font-medium">Snorkel AI</span>.
+              I'm a <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">3 years of professional experience</span> across <span className="text-white font-medium">Deloitte</span>, <span className="text-white font-medium">University of New Hampshire</span>, <span className="text-white font-medium">PaySplit AI</span>, and <span className="text-white font-medium">Snorkel AI</span>.
               I design and deploy scalable full-stack AI applications and autonomous agentic workflows using modern <span className="text-white font-medium">LLM frameworks</span>, <span className="text-white font-medium">RAG</span>, and robust backend architectures.
             </p>
 
