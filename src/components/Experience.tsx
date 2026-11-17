@@ -237,7 +237,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* Deloitte Data Scientist Section */}
+      {/* Data Scientist at Meta */}
       <div className="w-full bg-gray-100">
         <div className="container mx-auto px-6 py-24">
           <div className="px-8 py-8 lg:px-12 lg:py-12">
@@ -247,7 +247,7 @@ const Experience = () => {
                   Data Scientist
                 </h3>
                 <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
-                  Deloitte
+                  Meta
                 </p>
                 <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
                   Aug – Nov 2023
@@ -340,7 +340,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* Deloitte Software Engineer Intern Section */}
+      {/* Software Engineer Intern Section */}
       <div className="w-full bg-gray-100">
         <div className="container mx-auto px-6 py-24">
           <div className="px-8 py-8 lg:px-12 lg:py-12">
@@ -350,7 +350,7 @@ const Experience = () => {
                   Software Engineer Intern
                 </h3>
                 <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
-                  Deloitte
+                  Meta
                 </p>
                 <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
                   May – Aug 2022
