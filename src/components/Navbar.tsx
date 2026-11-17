@@ -8,7 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Projects", to: "/project-details" },
     { name: "Skills", to: { pathname: "/", hash: "#skills" } },
-    { name: "Resume", href: "https://drive.google.com/file/d/1qEZuBIZfwxnFG30wHUI_Zak_uJ9KDVUe/view?usp=sharing", external: true },
+    { name: "Resume", href: "https://drive.google.com/file/d/1ofxMcloms6FmDRKtpzdtO5nln37Fl57R/view?usp=sharing", external: true },
     { name: "Contact", to: { pathname: "/", hash: "#contact" } },
   ];
 
