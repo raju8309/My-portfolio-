@@ -15,15 +15,67 @@ const Experience = () => {
 
   return (
     <section id="resume" className="bg-gray-100 bg-dotted">
-      {/* PaySplit Section */}
-      <div className="w-full bg-gradient-to-b from-[#E6F0EA] via-[#DDEAE2] to-[#E6F0EA] py-24">
-        <div className="container mx-auto px-6 lg:px-12">
+      {/* Oracle Section */}
+      <div className="w-full bg-gray-100">
+        <div className="container mx-auto px-6 lg:px-12 py-24">
           <Reveal className="mb-16" delay={0}>
             <h2 className="text-5xl md:text-6xl font-bold font-heading mb-4 text-black">
               Experience
             </h2>
           </Reveal>
 
+          <Reveal className="mb-16" delay={0.1}>
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-3">
+                AI/ML Engineer
+              </h3>
+              <p className="text-lg lg:text-xl text-gray-700 font-medium mb-4">
+                Oracle — Contract
+              </p>
+              <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full">
+                Current · 6-month contract
+              </span>
+            </div>
+          </Reveal>
+
+          <Stagger className="space-y-8 max-w-4xl">
+            {[
+              "Build RAG-based LLM apps on OCI Generative AI and Oracle 23ai vector search that answer 10K+ queries/month with 92% accuracy.",
+              "Develop multi-agent workflows with LangGraph that automate 60% of support tickets and save 25+ hours/week.",
+              "Deploy ML models via FastAPI and Docker on OCI that serve 1M+ predictions/month at under 200ms latency.",
+              "Built CI/CD pipelines that cut model release time from 2 days to 3 hours, with automated drift monitoring and retraining.",
+              "Tuned chunking, embeddings, and prompts to improve retrieval relevance by 30%.",
+            ].map((item, index) => (
+              <StaggerItem
+                key={index}
+                delay={index * 0.08}
+                className="flex items-start gap-4"
+              >
+                <div className="w-6 h-6 bg-[#C74634] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg
+                    className="w-3.5 h-3.5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  {item}
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </div>
+
+      {/* PaySplit Section */}
+      <div className="w-full bg-gradient-to-b from-[#E6F0EA] via-[#DDEAE2] to-[#E6F0EA] py-24">
+        <div className="container mx-auto px-6 lg:px-12">
           <Reveal className="mb-16" delay={0.1}>
             <div>
               <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-3">
