@@ -33,18 +33,22 @@ const Experience = () => {
                 Oracle — Contract
               </p>
               <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full">
-                Current · 6-month contract
+                Jun. 2026 – Oct. 2026
               </span>
             </div>
           </Reveal>
 
+          <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-4xl mb-10">
+            <span className="font-semibold text-black">Key highlight: </span>
+            Scaled ML inference to 1M+ monthly predictions at &lt;200ms latency and automated 60% of support workflows using LangGraph.
+          </p>
+
           <Stagger className="space-y-8 max-w-4xl">
             {[
-              "Build RAG-based LLM apps on OCI Generative AI and Oracle 23ai vector search that answer 10K+ queries/month with 92% accuracy.",
-              "Develop multi-agent workflows with LangGraph that automate 60% of support tickets and save 25+ hours/week.",
-              "Deploy ML models via FastAPI and Docker on OCI that serve 1M+ predictions/month at under 200ms latency.",
-              "Built CI/CD pipelines that cut model release time from 2 days to 3 hours, with automated drift monitoring and retraining.",
-              "Tuned chunking, embeddings, and prompts to improve retrieval relevance by 30%.",
+              { title: "Low-Latency ML Inference", text: "Containerized and deployed production ML services using FastAPI and Docker on Oracle Cloud Infrastructure (OCI), serving 1M+ monthly predictions under a strict <200ms p95 latency SLA." },
+              { title: "Enterprise RAG Architecture", text: "Built a citation-backed RAG pipeline on OCI Generative AI and Oracle 23ai Vector Search that resolved 10K+ monthly queries at 92% accuracy." },
+              { title: "Multi-Agent Automation", text: "Designed stateful multi-agent workflows in LangGraph to automate 60% of inbound support tickets, saving 25+ engineering hours per week." },
+              { title: "Automated MLOps & Retrieval Tuning", text: "Cut model release cycles by 87% (from 2 days to 3 hours) via automated CI/CD drift-monitoring pipelines and boosted retrieval relevance by 30% through semantic chunking and prompt optimization." },
             ].map((item, index) => (
               <StaggerItem
                 key={index}
@@ -65,11 +69,20 @@ const Experience = () => {
                   </svg>
                 </div>
                 <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                  {item}
+                  <span className="font-semibold text-black">{item.title}: </span>
+                  {item.text}
                 </div>
               </StaggerItem>
             ))}
           </Stagger>
+
+          <div className="flex flex-wrap gap-2 mt-10 max-w-4xl">
+            {["Python", "FastAPI", "LangGraph", "OCI Generative AI", "Oracle 23ai", "Docker", "CI/CD"].map((tech) => (
+              <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-200">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -79,26 +92,27 @@ const Experience = () => {
           <Reveal className="mb-16" delay={0.1}>
             <div>
               <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-3">
-                Founding Full Stack Engineer
+                Founding Engineer
               </h3>
               <p className="text-lg lg:text-xl text-gray-700 font-medium mb-4">
-                PaySplit AI — Fintech Startup
+                PaySplit AI, Inc. — Remote
               </p>
               <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                2025 (6 months)
+                Sep. 2025 – Jun. 2026
               </span>
             </div>
           </Reveal>
 
-          <Stagger className="space-y-8 max-w-4xl mb-20">
+          <p className="text-gray-800 text-base lg:text-lg leading-relaxed max-w-4xl mb-10">
+            <span className="font-semibold text-black">Key highlight: </span>
+            Built a fintech platform from zero to production—shipping 20+ microservices and real-time Stripe checkout fraud models.
+          </p>
+
+          <Stagger className="space-y-8 max-w-4xl mb-10">
             {[
-              "Built a fintech web app and Chrome extension that splits a single online payment across multiple credit cards automatically using AI, solving the one-card-per-checkout limitation on DoorDash, Amazon, and 500+ sites.",
-              "Engineered an XGBoost + PyTorch fraud detection pipeline embedded in FastAPI app.state, scoring every transaction in under 50ms with 95%+ accuracy.",
-              "Designed an SVD-based card allocation engine optimizing split amounts across cards based on balance, rewards, and merchant category.",
-              "Built a Chrome extension using MutationObserver for SPA-aware checkout detection and automatic recommendations.",
-              "Developed a full-stack system using React, TypeScript, FastAPI, PostgreSQL, DynamoDB, Redis, Stripe, and OAuth2.",
-              "Implemented CI/CD using Docker and GitHub Actions with automated testing across multiple branches.",
-              "Built as a 3-person co-founding team in under 6 months while completing a graduate degree, with a real-time fraud monitoring dashboard live in production on AWS.",
+              { title: "Core Backend & API Architecture", text: "Architected and shipped 20+ production FastAPI REST endpoints with JWT authentication on AWS ECS Fargate (via Docker and GitHub Actions CI/CD), maintaining 99.9% uptime." },
+              { title: "Real-Time Fraud Decisioning", text: "Trained and deployed low-latency XGBoost and TensorFlow models on 11 behavioral features (0.88 AUC-ROC), enabling real-time Stripe checkout risk scoring under a <150ms latency budget." },
+              { title: "Automated Categorization & Ownership", text: "Reduced manual transaction tagging by 75% across 15K+ monthly transactions via an inline ML categorization engine, while owning system design and production incident response end-to-end." },
             ].map((item, index) => (
               <StaggerItem
                 key={index}
@@ -119,11 +133,20 @@ const Experience = () => {
                   </svg>
                 </div>
                 <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                  {item}
+                  <span className="font-semibold text-black">{item.title}: </span>
+                  {item.text}
                 </div>
               </StaggerItem>
             ))}
           </Stagger>
+
+          <div className="flex flex-wrap gap-2 mb-20 max-w-4xl">
+            {["Python", "FastAPI", "XGBoost", "TensorFlow", "Stripe API", "AWS ECS Fargate", "Docker", "GitHub Actions"].map((tech) => (
+              <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full">
+                {tech}
+              </span>
+            ))}
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <Reveal className="space-y-6 lg:space-y-8" delay={0.2}>
@@ -161,9 +184,7 @@ const Experience = () => {
                 </h3>
 
                 <p className="text-gray-700 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
-                  A fintech platform and Chrome extension that enables users to
-                  split one checkout across multiple cards using AI-powered
-                  allocation and fraud detection.
+                  A fintech platform shipped from zero to production, with 20+ FastAPI services and real-time Stripe checkout fraud models.
                 </p>
               </div>
 
@@ -197,27 +218,27 @@ const Experience = () => {
             <Reveal delay={0.4}>
               <div className="mb-8">
                 <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-black mb-2">
-                  AI Intern
+                  AI Research Intern
                 </h3>
                 <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
-                  University of New Hampshire
+                  University of New Hampshire — Manchester, NH
                 </p>
-                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                  Aug – Dec 2025
+                <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full border border-gray-200">
+                  Aug. 2025 – Dec. 2025
                 </span>
               </div>
             </Reveal>
 
-            <Stagger className="space-y-6 max-w-3xl mb-16">
+            <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-3xl mb-10">
+              <span className="font-semibold text-black">Key highlight: </span>
+              Achieved 95% retrieval accuracy and lifted multi-stage search relevance by 23% over dense vector baselines.
+            </p>
+
+            <Stagger className="space-y-6 max-w-3xl mb-10">
               {[
-                "Improved retrieval accuracy by ~95% by building a RAG-based graduate catalog chatbot using structured chunking, reranking, and semantic similarity techniques.",
-                "Processed and transformed 100% of UNH Graduate Catalog data into structured retrieval chunks using contextual headers and metadata, enabling precise and context-aware responses.",
-                "Enhanced answer relevance by implementing tiered ranking, program-based boosts, and policy prioritization aligned with user query intent.",
-                "Increased response quality and ranking precision by designing advanced reranking logic using SBERT similarity and metadata-driven scoring.",
-                "Built an automated evaluation pipeline using BERTScore, SBERT similarity, nugget precision/recall, and recall@k to quantitatively measure model performance.",
-                "Improved system reliability by implementing fallback handling and refining edge-case responses, reducing incorrect answers.",
-                "Collaborated in a 4-member Agile team, using GitHub workflows, code reviews, and sprint cycles to deliver continuous improvements.",
-                "Developed evaluation dashboards to track performance trends and validate improvements across iterations.",
+                { title: "Domain Knowledge Base", text: "Transformed 200+ pages of unstructured research documents into a citation-grounded knowledge base using contextual chunking and metadata normalization, hitting 95% retrieval accuracy on a 188-pair gold evaluation set." },
+                { title: "Multi-Stage Retrieval Pipeline", text: "Engineered a hybrid search architecture combining query rewriting, cross-encoder reranking, and intent-based boosting to improve retrieval quality by 23%." },
+                { title: "Automated Evaluation Dashboards", text: "Accelerated weekly sprint iterations across a 4-person Agile team by 40% with automated benchmarking pipelines tracking nDCG@k, BERTScore, and cosine similarity." },
               ].map((item, index) => (
                 <StaggerItem
                   key={index}
@@ -238,11 +259,20 @@ const Experience = () => {
                     </svg>
                   </div>
                   <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                    {item}
+                    <span className="font-semibold text-black">{item.title}: </span>
+                    {item.text}
                   </div>
                 </StaggerItem>
               ))}
             </Stagger>
+
+            <div className="flex flex-wrap gap-2 mb-16 max-w-3xl">
+              {["Python", "RAG", "Cross-Encoders", "NLP", "BERTScore", "Vector Search"].map((tech) => (
+                <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
 
             <Reveal
               className="bg-gradient-to-r from-[#0B3D91] to-[#003366] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
@@ -258,9 +288,7 @@ const Experience = () => {
                       ASK UNH: Graduate Catalog Chatbot
                     </h3>
                     <p className="text-blue-50 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
-                      Built a RAG-based assistant to answer graduate program and
-                      policy questions using structured retrieval, reranking,
-                      and evaluation pipelines. Achieved ~95% accuracy.
+                      Built a citation-grounded knowledge base and multi-stage retrieval pipeline. Achieved 95% retrieval accuracy and a 23% relevance lift over dense vector baselines.
                     </p>
                   </div>
 
@@ -301,17 +329,22 @@ const Experience = () => {
                 <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
                   Meta
                 </p>
-                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                  Aug – Nov 2023
+                <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full border border-gray-200">
+                  Aug. 2022 – Dec. 2023
                 </span>
               </div>
             </Reveal>
 
-            <Stagger className="space-y-6 max-w-3xl mb-16">
+            <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-3xl mb-10">
+              <span className="font-semibold text-black">Key highlight: </span>
+              Predicted customer churn at 87% accuracy across 500K+ records and drove a 4.5% retention lift through multi-cohort A/B experimentation.
+            </p>
+
+            <Stagger className="space-y-6 max-w-3xl mb-10">
               {[
-                "Built and deployed machine learning models in Python (pandas, scikit-learn) to predict customer churn, achieving 87% accuracy and helping the client prioritize retention outreach.",
-                "Engineered data pipelines to clean and process 500K+ records, reducing data prep time by 40%.",
-                "Created interactive dashboards with Plotly and Streamlit to communicate model insights to non-technical stakeholders.",
+                { title: "Churn Prediction Modeling", text: "Trained, validated, and deployed supervised ML models (scikit-learn, pandas) across 500K+ user records, predicting customer churn at 87% accuracy (0.84 F1-score)." },
+                { title: "Scalable Data Pipelines", text: "Engineered automated SQL and Python ETL workflows that cut data preparation and feature-engineering runtime by 40%, saving 12+ compute hours weekly." },
+                { title: "Experimentation & Drift Monitoring", text: "Drove a 4.5% lift in 30-day retention across 200K+ cohort users via A/B testing, and reduced silent model degradation incidents by 65% using automated KPI/drift dashboards." },
               ].map((item, index) => (
                 <StaggerItem
                   key={index}
@@ -332,11 +365,20 @@ const Experience = () => {
                     </svg>
                   </div>
                   <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                    {item}
+                    <span className="font-semibold text-black">{item.title}: </span>
+                    {item.text}
                   </div>
                 </StaggerItem>
               ))}
             </Stagger>
+
+            <div className="flex flex-wrap gap-2 mb-16 max-w-3xl">
+              {["Python", "SQL", "scikit-learn", "pandas", "A/B Testing", "ETL Pipelines"].map((tech) => (
+                <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
 
             <Reveal
               className="bg-gradient-to-r from-[#1F2937] to-[#111827] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
@@ -352,7 +394,7 @@ const Experience = () => {
                       Customer Churn Prediction
                     </h3>
                     <p className="text-gray-300 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
-                      Built ML models to predict customer churn with 87% accuracy, enabling data-driven retention strategies and reducing data prep time by 40%.
+                      Predicted customer churn at 87% accuracy (0.84 F1-score) across 500K+ records and drove a 4.5% lift in 30-day retention.
                     </p>
                   </div>
 
@@ -361,16 +403,16 @@ const Experience = () => {
                       Python
                     </span>
                     <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                      SQL
+                    </span>
+                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
                       scikit-learn
                     </span>
                     <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
                       pandas
                     </span>
                     <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
-                      Plotly
-                    </span>
-                    <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
-                      Streamlit
+                      A/B Testing
                     </span>
                   </div>
                 </Reveal>
@@ -404,17 +446,21 @@ const Experience = () => {
                 <p className="text-lg lg:text-xl text-gray-700 font-medium mb-3">
                   Meta
                 </p>
-                <span className="text-base text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                  May – Aug 2022
+                <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full border border-gray-200">
+                  May 2022 – Aug. 2022
                 </span>
               </div>
             </Reveal>
 
-            <Stagger className="space-y-6 max-w-3xl mb-16">
+            <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-3xl mb-10">
+              <span className="font-semibold text-black">Key highlight: </span>
+              Automated internal reporting pipelines to cut turnaround times by 30% and reduced production regressions by 45%.
+            </p>
+
+            <Stagger className="space-y-6 max-w-3xl mb-10">
               {[
-                "Developed Python automation scripts across the full software development life cycle (SDLC), from requirements through testing and deployment.",
-                "Built backend data-processing utilities that automated manual reporting tasks, cutting turnaround time by 30%.",
-                "Wrote unit tests with pytest to improve code reliability and reduce regressions.",
+                { title: "Backend Automation Utilities", text: "Built Python data-processing utilities that automated manual cross-functional reporting workflows, shortening turnaround time by 30% and saving 8+ hours per week." },
+                { title: "Testing & SDLC Delivery", text: "Delivered 6 production automation scripts across the full SDLC and implemented automated unit/integration test suites with pytest, cutting post-deployment regressions by 45%." },
               ].map((item, index) => (
                 <StaggerItem
                   key={index}
@@ -435,11 +481,20 @@ const Experience = () => {
                     </svg>
                   </div>
                   <div className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                    {item}
+                    <span className="font-semibold text-black">{item.title}: </span>
+                    {item.text}
                   </div>
                 </StaggerItem>
               ))}
             </Stagger>
+
+            <div className="flex flex-wrap gap-2 mb-16 max-w-3xl">
+              {["Python", "pytest", "SDLC", "Data Processing"].map((tech) => (
+                <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
 
             <Reveal
               className="bg-gradient-to-r from-[#0D9488] to-[#0F766E] rounded-2xl lg:rounded-3xl p-8 lg:p-12 shadow-2xl"
@@ -455,7 +510,7 @@ const Experience = () => {
                       Automation & Data Processing
                     </h3>
                     <p className="text-teal-50 text-lg lg:text-xl leading-relaxed mb-8 lg:mb-10">
-                      Developed Python automation scripts across the full SDLC and built backend utilities that automated manual reporting tasks, cutting turnaround time by 30%.
+                      Automated internal reporting pipelines, cutting turnaround time by 30% and reducing production regressions by 45%.
                     </p>
                   </div>
 
@@ -470,7 +525,7 @@ const Experience = () => {
                       SDLC
                     </span>
                     <span className="bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
-                      Automation
+                      Data Processing
                     </span>
                   </div>
                 </Reveal>

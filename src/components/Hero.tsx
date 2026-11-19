@@ -18,12 +18,12 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg lg:max-w-xl">
-              I'm an <span className="text-white font-medium">AI Engineer</span> with <span className="text-white font-medium">3 years of professional experience</span> across <span className="text-white font-medium">Oracle</span>, <span className="text-white font-medium">Meta</span>, <span className="text-white font-medium">University of New Hampshire</span>, and <span className="text-white font-medium">PaySplit AI</span>.
-              I design and deploy scalable full-stack AI applications and autonomous agentic workflows using modern <span className="text-white font-medium">LLM frameworks</span>, <span className="text-white font-medium">RAG</span>, and robust backend architectures.
+              I'm an <span className="text-white font-medium">AI/ML Engineer</span> with <span className="text-white font-medium">3 years of professional experience</span> across <span className="text-white font-medium">Oracle</span>, <span className="text-white font-medium">PaySplit AI</span>, <span className="text-white font-medium">University of New Hampshire</span>, and <span className="text-white font-medium">Meta</span>.
+              I design and deploy production ML services, RAG systems, and multi-agent workflows using <span className="text-white font-medium">FastAPI</span>, <span className="text-white font-medium">LangGraph</span>, and <span className="text-white font-medium">OCI</span>.
             </p>
 
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              I completed my Master's in IT at the University of New Hampshire and specialize in building production-ready AI systems with expertise in <span className="text-white font-medium">Python</span>, <span className="text-white font-medium">React</span>, <span className="text-white font-medium">FastAPI</span>, <span className="text-white font-medium">PyTorch</span>, and <span className="text-white font-medium">XGBoost</span>.
+              I completed my Master's in IT at the University of New Hampshire and specialize in building production-ready AI systems with expertise in <span className="text-white font-medium">Python</span>, <span className="text-white font-medium">FastAPI</span>, <span className="text-white font-medium">LangGraph</span>, <span className="text-white font-medium">XGBoost</span>, and <span className="text-white font-medium">Docker</span>.
             </p>
 
             {/* Social Links */}
