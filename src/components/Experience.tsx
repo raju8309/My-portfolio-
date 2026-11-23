@@ -15,7 +15,7 @@ const Experience = () => {
 
   return (
     <section id="resume" className="bg-gray-100 bg-dotted">
-      {/* Oracle Section */}
+      {/* Netflix Section */}
       <div className="w-full bg-gray-100">
         <div className="container mx-auto px-6 lg:px-12 py-24">
           <Reveal className="mb-16" delay={0}>
@@ -30,32 +30,35 @@ const Experience = () => {
                 AI/ML Engineer
               </h3>
               <p className="text-lg lg:text-xl text-gray-700 font-medium mb-4">
-                Oracle — Contract
+                Netflix — Contract
               </p>
               <span className="text-base text-gray-600 bg-white px-4 py-2 rounded-full">
-                Jun. 2026 – Oct. 2026
+                Jun. 2026 – Nov. 2026
               </span>
             </div>
           </Reveal>
 
           <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-4xl mb-10">
             <span className="font-semibold text-black">Key highlight: </span>
-            Scaled ML inference to 1M+ monthly predictions at &lt;200ms latency and automated 60% of support workflows using LangGraph.
+            Served 1M+ monthly predictions at under 200ms p95 latency and automated 60% of inbound support tickets with LangGraph.
           </p>
 
           <Stagger className="space-y-8 max-w-4xl">
             {[
-              { title: "Low-Latency ML Inference", text: "Containerized and deployed production ML services using FastAPI and Docker on Oracle Cloud Infrastructure (OCI), serving 1M+ monthly predictions under a strict <200ms p95 latency SLA." },
-              { title: "Enterprise RAG Architecture", text: "Built a citation-backed RAG pipeline on OCI Generative AI and Oracle 23ai Vector Search that resolved 10K+ monthly queries at 92% accuracy." },
-              { title: "Multi-Agent Automation", text: "Designed stateful multi-agent workflows in LangGraph to automate 60% of inbound support tickets, saving 25+ engineering hours per week." },
-              { title: "Automated MLOps & Retrieval Tuning", text: "Cut model release cycles by 87% (from 2 days to 3 hours) via automated CI/CD drift-monitoring pipelines and boosted retrieval relevance by 30% through semantic chunking and prompt optimization." },
+              { title: "Low-Latency ML Inference", text: "Served 1M+ monthly predictions at under 200ms p95 latency by moving ML and GenAI prototypes out of notebooks into containerized FastAPI microservices on Docker." },
+              { title: "Production RAG Pipeline", text: "Resolved 10K+ monthly user queries at 92% answer accuracy by building a production RAG pipeline with semantic chunking, reranking, and tuned prompt templates." },
+              { title: "Multi-Agent Automation", text: "Automated 60% of inbound support tickets, saving 25+ engineering hours per week, by designing stateful multi-agent workflows in LangGraph." },
+              { title: "Automated MLOps", text: "Cut model release cycles 87%, from 2 days to 3 hours, by building automated CI/CD pipelines with data drift detection and retraining triggers." },
+              { title: "Retrieval Optimization", text: "Increased retrieval relevance 30% across internal knowledge bases by optimizing chunking strategy, embedding models, and prompt design." },
+              { title: "Evaluation & Experimentation", text: "Established offline evaluation benchmarks using nDCG@k and precision/recall for ranking and retrieval, and supported canary rollouts and online A/B tests to measure real member impact." },
+              { title: "Streaming Data Pipelines", text: "Built and maintained Python and SQL ETL and feature engineering pipelines over high-volume streaming event data." },
             ].map((item, index) => (
               <StaggerItem
                 key={index}
                 delay={index * 0.08}
                 className="flex items-start gap-4"
               >
-                <div className="w-6 h-6 bg-[#C74634] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-[#E50914] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-3.5 h-3.5 text-white"
                     fill="currentColor"
@@ -77,7 +80,7 @@ const Experience = () => {
           </Stagger>
 
           <div className="flex flex-wrap gap-2 mt-10 max-w-4xl">
-            {["Python", "FastAPI", "LangGraph", "OCI Generative AI", "Oracle 23ai", "Docker", "CI/CD"].map((tech) => (
+            {["Python", "FastAPI", "LangGraph", "Docker", "RAG", "CI/CD", "SQL"].map((tech) => (
               <span key={tech} className="bg-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-200">
                 {tech}
               </span>
